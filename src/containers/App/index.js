@@ -18,10 +18,10 @@ export default class App extends Component {
           <Search />
           <Item />
         </div>
-  			<div className={styles.right}>
+        <div className={styles.right}>
           <FavouriteFilm />
         </div>
-  		</div>
+      </div>
     );
   }
 }
