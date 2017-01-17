@@ -1,13 +1,29 @@
-.wrapper {
-  display: flex;
-}
+.search {
+  width: 20%;
 
-.left {
-   border: 2px solid red;
-   width: 50%;
-}
+  &-button {
+    /*background: url(../search.svg) no-repeat;
+    background-size: 77%;*/
+    width: 2em;
+    height: 2em;
+    background-position: 50% 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
 
-.right {
-   border: 2px solid blue;
-   flex-grow: 1;
+  &-text {
+    outline: none;
+    width: 0;
+    border: none;
+    transition: width .3s ease;
+    margin-right: 5px;
+
+    &__showen {
+      border-bottom: 2px solid #9ed4d6;
+      width: 160px;
+      max-width: 100%;
+      transition: width .3s ease;
+    }
+  }
 }

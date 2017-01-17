@@ -20,16 +20,17 @@ export default class Search extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Search:
+      <div className={styles.search}>
+        <form className={styles.form} onSubmit={this.handleSubmit}>
           <input
             type="text"
-            value={this.state.value}
+            className={styles['search-text']}
             placeholder='Search'
+            value={this.state.value}
             onChange={this.handleChange} />
-        </label>
-      </form>
+          <button className={styles['search-button']}>svg</button>
+        </form>
+      </div>
     );
   }
 };

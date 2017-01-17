@@ -1,3 +1,13 @@
-.image {
-  border: 1px solid red;
+.wrapper {
+  display: flex;
+}
+
+.left {
+   border: 2px solid red;
+   width: 50%;
+}
+
+.right {
+   border: 2px solid blue;
+   flex-grow: 1;
 }

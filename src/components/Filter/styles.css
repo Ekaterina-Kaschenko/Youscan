@@ -1,0 +1,8 @@
+.filter {
+  min-width: 160px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-bottom: 2px solid #9ed4d6;
+  margin-right: 2.5em;
+}

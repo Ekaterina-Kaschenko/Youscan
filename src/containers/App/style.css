@@ -1,13 +1,14 @@
+.root {
+  background-color: #9ed4d6;
+  color: #474f5c;
+  font-family: 'Raleway', sans-serif;
+}
+
 .wrapper {
-  display: flex;
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
-.left {
-   border: 2px solid red;
-   width: 50%;
-}
-
-.right {
-   border: 2px solid blue;
-   flex-grow: 1;
+.full-row {
+  background-color: #f8f9fb;
 }
