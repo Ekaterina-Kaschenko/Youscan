@@ -1,13 +1,28 @@
-.wrapper {
-  display: flex;
+.tile {
+   width: 200px;
 }
 
-.left {
-   border: 2px solid red;
-   width: 50%;
+.item {
+  text-align: center;
+  position: relative;
+  border-radius: 3px;
+  box-shadow: 3px 3px 25px 2px rgba(43, 84, 87, 0.19);
+  transition: .3s ease;
+  background-color: #f8f9fb;
+  color: #474f5c;
+  margin: 1em;
+
+  &:hover {
+    box-shadow: 3px 3px 18px 3px rgba(1, 1, 1, 0.3);
+    transition: .3s ease;
+  }
 }
 
-.right {
-   border: 2px solid blue;
-   flex-grow: 1;
+.name {
+  padding: 10px .6em;
+  text-align: left;
+  font-size: 1.1em;
+  letter-spacing: .045em;
+  font-weight: 400;
+  background-color: #fff;
 }

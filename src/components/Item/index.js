@@ -1,35 +1,14 @@
 import React from 'react';
 import styles from './styles.css';
 
-export default class Search extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-  }
+export default class Item extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Search:
-          <input
-            type="text"
-            value={this.state.value}
-            placeholder='Search'
-            onChange={this.handleChange} />
-        </label>
-      </form>
+      <li className={styles.item + ' ' + styles.tile}>
+        <img src='/IMG_7057.JPG' alt='film' />
+        <h3 className={styles.name}>Film name</h3>
+      </li>
     );
   }
 };

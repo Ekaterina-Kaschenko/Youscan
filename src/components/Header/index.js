@@ -11,9 +11,7 @@ export default class Header extends React.Component {
       <header className={styles.header}>
         <div className={styles['header-left']}>
           <Logo />
-          <form method="POST">
-            <Filter />
-          </form>
+          <Filter />
         </div>
         <Search />
       </header>

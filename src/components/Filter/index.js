@@ -1,15 +1,35 @@
 import React from 'react';
 import styles from './styles.css';
 
-export default class Search extends React.Component {
+export default class Filter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: 'coconut'};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+  }
+
   render() {
     return (
-      <select className={styles.filter}>
-        <option disabled selected value>choose filter</option>
-        <option value="">text1</option>
-        <option value="">text2</option>
-        <option value="">text3</option>
-      </select>
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          <select className={styles.filter} value={this.state.value} onChange={this.handleChange}>
+            <option value='grapefruit'>Grapefruit</option>
+            <option value='lime'>Lime</option>
+            <option value='coconut'>Coconut</option>
+            <option value='mango'>Mango</option>
+          </select>
+        </label>
+      </form>
     );
   }
 };

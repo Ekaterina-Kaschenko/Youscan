@@ -31,6 +31,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "v2.2.0-rc.3",
     "webpack-dev-server": "v2.2.0-rc.0"
   },
@@ -41,6 +42,7 @@
     "hjs-webpack": "^8.4.3",
     "json-loader": "^0.5.4",
     "postcss-loader": "^1.2.2",
+    "postcss-modules": "^0.6.3",
     "precss": "^1.4.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",

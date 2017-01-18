@@ -1,5 +1,5 @@
-.root {
-  background-color: #9ed4d6;
+#root {
+  background-color: #f8f9fb;
   color: #474f5c;
   font-family: 'Raleway', sans-serif;
 }
@@ -10,5 +10,20 @@
 }
 
 .full-row {
-  background-color: #f8f9fb;
+  background-color: #fff;
+  border-bottom: 1px solid #e6e6ea;
+}
+
+.main {
+  font-size: 16px;
+}
+
+img {
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }

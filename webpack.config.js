@@ -18,14 +18,19 @@ const plugins = [
     'process.env': { NODE_ENV: JSON.stringify(nodeEnv) }
   }),
   new webpack.NamedModulesPlugin(),
+  new webpack.LoaderOptionsPlugin({
+    options: {
+      postcss: [
+        require('precss'),
+        require('autoprefixer'),
+        require('cssnano')
+      ]
+    }
+  })
 ];
 
 if (isProd) {
   plugins.push(
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug:    false
-    }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings:     false,
@@ -76,9 +81,10 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: [
+        loaders: [
           'style-loader?sourceMap',
-          'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
+          'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
+          'postcss-loader'
         ]
       },
       {
@@ -87,7 +93,29 @@ module.exports = {
         use: [
           'babel-loader'
         ]
-      },
+      }, {
+  		  test: /\.(png|jpg|gif)$/,
+        loaders: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
+          },
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 2000
+            }
+          }
+        ]
+  	  }, {
+  		  test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]'
+        }
+  	  }
     ],
   },
   resolve: {
@@ -121,41 +149,3 @@ module.exports = {
     }
   }
 };
-
-// CSS modules
-const cssModulesNames = `${nodeEnv ? '[path][name]__[local]__' : ''}[hash:base64:5]`;
-
-const matchCssLoaders = /(^|!)(css-loader)($|!)/;
-
-const findLoader = (loaders, match) => {
-  const found = loaders.filter(l => l && l.loader && l.loader.match(match));
-  return found ? found[0] : null;
-}
-
-// existing css loader
-const cssloader =
-  findLoader(config.module.loaders, matchCssLoaders);
-
-const newloader = Object.assign({}, cssloader, {
-  test: /\.module\.css$/,
-  include: [src],
-  loader: cssloader.loader.replace(matchCssLoaders, `$1$2?modules&localIdentName=${cssModulesNames}$3`)
-});
-config.module.loaders.push(newloader);
-cssloader.test = new RegExp(`[^module]${cssloader.test.source}`);
-cssloader.loader = newloader.loader;
-
-config.module.loaders.push({
-  test: /\.css$/,
-  include: [modules],
-  loader: 'style!css'
-});
-// CSS modules
-
-// postcss
-config.postcss = [].concat([
-  require('precss')({}),
-  require('autoprefixer')({}),
-  require('cssnano')({})
-]);
-// END postcss
