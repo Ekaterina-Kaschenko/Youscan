@@ -3,8 +3,6 @@ import styles from './styles.css';
 
 import api from '../../utiles/api.js';
 
-// const FilmTitle = (props) => <li className={styles['search-item']}>{props.film.title}</li>
-
 export default class Search extends React.Component {
  
   constructor(props) {
@@ -21,13 +19,13 @@ export default class Search extends React.Component {
       this.setState({
         films: res
       });
-    })
+    });
   }
 
   handleSubmit(event) {
     event.preventDefault();
   }
-
+  
   render() {
     let items = this.state.items;
     if (this.state.filter) {
