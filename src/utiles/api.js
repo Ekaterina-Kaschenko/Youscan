@@ -25,7 +25,7 @@ const api = {
       });
   },
   getGenres() {
-    const url =  'https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=3f04510390c8d68dba128013d0013351';
+    const url = 'https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=3f04510390c8d68dba128013d0013351';
     return fetch(url)
       .then(r => { return r.json(); })
       .then(x => { return x.genres; })
@@ -34,7 +34,21 @@ const api = {
             return genre
         });
       });
+  },
+
+  getDetails(id) {
+    const url = `https://api.themoviedb.org/3/movie/${id}?api_key=3f04510390c8d68dba128013d0013351&language=en-US`;
+    console.log(url)
+    return fetch(url)
+      .then(r => { 
+           return r.json(); 
+      })
+      .then(film => { 
+        film.backdrop_path = 'http://image.tmdb.org/t/p/w342' + film.backdrop_path;
+        film.poster_path   = 'http://image.tmdb.org/t/p/w342' + film.poster_path;
+        return film; })
   }
+  
 };
 
 export default api;
