@@ -28,7 +28,6 @@ export default class Filter extends React.Component {
       this.setState({
         genres: res
       });
-      console.log(this.state.genres);
     })
   }
 
