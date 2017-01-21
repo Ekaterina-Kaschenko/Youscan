@@ -14,7 +14,6 @@ const api = {
       });
   },
   searchFilms(query) {
-    // const query = 'kill'; 
     const url = `https://api.themoviedb.org/3/search/movie?include_adult=false&page=1&language=en-US&api_key=3f04510390c8d68dba128013d0013351&query=${query}`;
     return fetch(url)
       .then(r => { return r.json(); })
@@ -22,6 +21,17 @@ const api = {
       .then(x => {
         return x.map(film => {
           return film;
+        });
+      });
+  },
+  getGenres() {
+    const url =  'https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=3f04510390c8d68dba128013d0013351';
+    return fetch(url)
+      .then(r => { return r.json(); })
+      .then(x => { return x.genres; })
+      .then(res => {
+        return res.map(genre => {
+            return genre.name
         });
       });
   }
