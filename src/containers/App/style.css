@@ -1,4 +1,4 @@
-#root {
+.app {
   background-color: #f8f9fb;
   color: #474f5c;
   font-family: 'Raleway', sans-serif;
@@ -18,12 +18,3 @@
   font-size: 16px;
 }
 
-img {
-  width: 100%;
-}
-
-.list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
