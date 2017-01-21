@@ -7,7 +7,7 @@ export default class Filter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 'coconut',
+      value: 'Choose genre',
       genres: []
     };
 
@@ -16,9 +16,15 @@ export default class Filter extends React.Component {
   }
 
   handleChange(event) {
-    // var genresResult = [];
     this.setState({value: event.target.value});
-    api.getGenres(event.target.value).then((res) => {
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+  }
+
+  componentWillMount() {
+    api.getGenres().then((res) => {
       this.setState({
         genres: res
       });
@@ -26,19 +32,17 @@ export default class Filter extends React.Component {
     })
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-  }
-
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
           <select className={styles.filter} value={this.state.value} onChange={this.handleChange}>
-            <option value='grapefruit'>Grapefruit</option>
-            <option value='lime'>Lime</option>
-            <option value='coconut'>Coconut</option>
-            <option value='mango'>Mango</option>
+            <option value='Choose genre'>Choose genre</option>
+            {this.state.genres.map(genre => {
+              return (
+                <option value={genre.name} key={genre.id}>{genre.name}</option>
+              );
+            })}
           </select>
         </label>
       </form>
