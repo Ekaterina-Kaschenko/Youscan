@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import Header from '../../components/Header';
 import LikeBtn from '../../components/LikeBtn';
 import Item from '../../components/Item';
+import FilmDetails from '../../components/FilmDetails';
 
 import '../../reset.css';
 import styles from './style.css';
@@ -22,6 +23,7 @@ export default class App extends Component {
           <div className={styles.content}>
             <Item />
           </div>
+          <FilmDetails />
         </section>
       </div>
     );
