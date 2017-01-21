@@ -31,7 +31,7 @@ const api = {
       .then(x => { return x.genres; })
       .then(res => {
         return res.map(genre => {
-            return genre.name
+            return genre
         });
       });
   }
