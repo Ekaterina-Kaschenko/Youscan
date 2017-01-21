@@ -1,5 +1,5 @@
 .tile {
-   width: 220px;
+   width: 23%;
 }
 
 .item {
@@ -10,7 +10,7 @@
   transition: .6s ease;
   background-color: #fff;
   color: #474f5c;
-  margin: 1em;
+  margin: 2% 1%;
 
   &:hover {
     
