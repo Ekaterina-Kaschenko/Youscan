@@ -13,7 +13,6 @@
   margin: 2% 1%;
 
   &:hover {
-    
     box-shadow: 3px 3px 25px 3px rgba(1, 1, 1, 0.3);
     transition: .6s ease;
     transform: translateY(-2px);

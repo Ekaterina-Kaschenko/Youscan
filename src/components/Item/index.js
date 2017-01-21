@@ -21,8 +21,7 @@ export default class Item extends React.Component {
       }
 
   render() {
-    
-    // const items = this.state.films;
+
     if (!this.state.films.length) {
       return (
         <div>Фильмы не найдены</div>
