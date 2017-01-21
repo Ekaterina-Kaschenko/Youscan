@@ -16,6 +16,7 @@
   border: 1px solid #f8f9fb;
   transition: .3s ease;
   border-radius: 5px;
+  cursor: pointer;
 
   &:hover {
     transition: .3s ease;
