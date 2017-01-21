@@ -1,5 +1,5 @@
 # Youscan
-This is a [test task](https://gist.github.com/krambertech/ecb3890824fd7ada0f4ec1ff55125758) for Junior Front-End Developer Position. For duing it I used React.
+This is a [test task](https://gist.github.com/krambertech/ecb3890824fd7ada0f4ec1ff55125758) for Junior Front-End Developer Position. For doing it I used React.
 
 To open my project do next steps at your command line:
 
