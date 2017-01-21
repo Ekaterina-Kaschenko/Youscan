@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.css';
 
-import api from '../../utiles/api.js'
+import api from '../../utiles/api.js';
 
 // const FilmTitle = (props) => <li className={styles['search-item']}>{props.film.title}</li>
 
