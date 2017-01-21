@@ -1,17 +1,29 @@
 import React from 'react';
 import styles from './styles.css';
 
+import api from '../../utiles/api.js';
+
 export default class Filter extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: 'coconut'};
+    this.state = {
+      value: 'coconut',
+      genres: []
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
+    // var genresResult = [];
     this.setState({value: event.target.value});
+    api.getGenres(event.target.value).then((res) => {
+      this.setState({
+        genres: res
+      });
+      console.log(this.state.genres);
+    })
   }
 
   handleSubmit(event) {
