@@ -22,12 +22,10 @@ export default class Item extends React.Component {
   }
 
   getDetailsFilm(id) {
-    console.log('film', this.state.film.title);
     return this.state.film.id;
   }
 
   render() {
-    const { title, backdrop_path, overview, showFilmWithID } = this.props;
     if (!this.state.films.length) {
       return (
         <div>Фильмы не найдены</div>
@@ -36,7 +34,6 @@ export default class Item extends React.Component {
     return (
       <ul className={styles.list}>
          {this.state.films.map(film => {
-           console.log('hey',film.id, ' ', film.title);
             return (
               <Link to={`/details/${film.id}`} 
                 className={styles.item + ' ' + styles.tile} 
@@ -47,10 +44,8 @@ export default class Item extends React.Component {
                 </li>
               </Link>
             );
-            
           })}
       </ul>
     );
-    console.log('Popular films: ', this.state.films);
   }
 };
