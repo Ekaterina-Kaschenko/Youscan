@@ -7,7 +7,8 @@ export default class FilmDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      film: []
+      film: [],
+      genres: []
     };
 
   }
@@ -21,7 +22,6 @@ export default class FilmDetails extends React.Component {
   }
 
   render() {
-    console.log('state = ', this.state.film.id, this.props);
     return (
       <div key={this.state.film.id} 
            className={styles['item-card']} >
@@ -32,7 +32,11 @@ export default class FilmDetails extends React.Component {
               <img src={this.state.film.backdrop_path} alt='film' />
             </div>
             <div className={styles.rating}>
-              rating
+              {this.state.genres.map(genre => {
+                return (
+                  <p key={genre.id}>{genre.name}</p>
+                )
+              })}
             </div>
           </div>
           <div className={styles.info}>
