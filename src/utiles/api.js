@@ -36,9 +36,14 @@ const api = {
       });
   },
 
+  getGenresFilm(id) {
+    const url = `https://api.themoviedb.org/3/genre/${id}/movies?api_key=3f04510390c8d68dba128013d0013351&language=en-US&include_adult=false&sort_by=created_at.asc`;
+    return fetch(url)
+      .then(res => res.json());
+  },
+
   getDetails(id) {
     const url = `https://api.themoviedb.org/3/movie/${id}?api_key=3f04510390c8d68dba128013d0013351&language=en-US`;
-    console.log(url)
     return fetch(url)
       .then(r => { 
            return r.json(); 
