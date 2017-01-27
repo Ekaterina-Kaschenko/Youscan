@@ -23,8 +23,11 @@ export default class App extends Component {
           <div className={styles.content}>
             <Item />
           </div>
-          <FilmDetails />
         </section>
+        <div>
+          {this.props.children}
+        </div>
+        
       </div>
     );
   }

@@ -2,6 +2,7 @@
   background-color: #f8f9fb;
   color: #474f5c;
   font-family: 'Raleway', sans-serif;
+  min-height: 100vh;
 }
 
 .wrapper {
