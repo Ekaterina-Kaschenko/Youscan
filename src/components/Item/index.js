@@ -6,23 +6,28 @@ import api from '../../utiles/api.js'
 
 export default class Item extends React.Component {
   constructor(props) {
-        super(props);
-        this.state = {
-          value: '',
-          films: []
-        };
-      }
+    super(props);
+    this.state = {
+      value: '',
+      films: []
+    };
+  }
 
-      componentWillMount() {
-        api.getPopularFilms().then((res) => {
-          this.setState({
-            films: res
-          });
-        })
-      }
+  componentWillMount() {
+    api.getPopularFilms().then((res) => {
+      this.setState({
+        films: res
+      });
+    })
+  }
+
+  getDetailsFilm(id) {
+    console.log('film', this.state.film.title);
+    return this.state.film.id;
+  }
 
   render() {
-    const { title, backdrop_path, overview, onClick } = this.props;
+    const { title, backdrop_path, overview, showFilmWithID } = this.props;
     if (!this.state.films.length) {
       return (
         <div>Фильмы не найдены</div>
@@ -33,10 +38,9 @@ export default class Item extends React.Component {
          {this.state.films.map(film => {
            console.log('hey',film.id, ' ', film.title);
             return (
-              <Link to='/details'  
+              <Link to={`/details/${film.id}`} 
                 className={styles.item + ' ' + styles.tile} 
-                key={film.id}
-                onClick={onClick}>
+                key={film.id} >
                 <li>
                   <img src={film.backdrop_path} alt='film' />
                   <h3 className={styles.name}>{film.title}</h3>

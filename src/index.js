@@ -1,7 +1,7 @@
 // import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 import React    from 'react';
-import {Router, Route, hashHistory} from 'react-router';
+import {Router, Route, browserHistory} from 'react-router';
 
 import App   from './containers/App';
 import FilmDetails  from './components/FilmDetails';
@@ -11,10 +11,9 @@ import FilmDetails  from './components/FilmDetails';
 import './index.html';
 
 ReactDOM.render(
-  <Router history={hashHistory}>
-    <Route path='/' component={App}>
-      <Route path='/details' component={FilmDetails} />
-    </Route>
+  <Router history={browserHistory}>
+    <Route path='/' component={App} />
+    <Route path='/details/:id' component={FilmDetails} />
   </Router>,
   document.getElementById('root')
 );
