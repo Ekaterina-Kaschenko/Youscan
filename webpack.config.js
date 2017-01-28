@@ -6,7 +6,7 @@ const nodeEnv = process.env.NODE_ENV || 'development';
 const isProd  = nodeEnv === 'production';
 
 const sourcePath = path.join(__dirname, `./src`);
-const destPath   = path.join(__dirname, `./dest`);
+const distPath   = path.join(__dirname, `./dist`);
 
 const plugins = [
   new webpack.optimize.CommonsChunkPlugin({
@@ -65,7 +65,7 @@ module.exports = {
     vendor: ['react']
   },
   output: {
-    path: destPath,
+    path: distPath,
     filename: '[name].bundle.js'
   },
   module: {
