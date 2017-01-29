@@ -9,7 +9,7 @@ export default class Filter extends React.Component {
     this.state = {
       value: 'Choose genre',
       genres: [],
-      choosenGenre: null
+      choosenGenre: null,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -18,8 +18,8 @@ export default class Filter extends React.Component {
 
   handleChange(event) {
     this.setState({value: event.target.value});
-    api.getGenresFilm(12).then((res) => {
-      console.log(res);
+    let genreID = this.state.genres.filter(g => g.name == event.target.value)[0].id;
+    api.getGenresFilm(genreID).then((res) => {
       this.setState({
         choosenGenre: res.results
       });
@@ -38,17 +38,18 @@ export default class Filter extends React.Component {
     })    
   }
 
-
-
   render() {
+    console.log('state ', this.state.choosenGenre);
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          <select className={styles.filter} value={this.state.value} onChange={this.handleChange}>
+          <select className={styles.filter} value={this.state.value}onChange={this.handleChange}>
             <option value='Choose genre'>Choose genre</option>
             {this.state.genres.map(genre => {
               return (
-                <option value={genre.name} key={genre.id}>{genre.name} + {genre.id}</option>
+                <option value={genre.name} key={genre.id}>
+                  {genre.name} + {genre.id}
+                </option>
               );
             })}
           </select>
