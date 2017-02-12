@@ -5,6 +5,8 @@ import LikeBtn from '../../components/LikeBtn';
 import Item from '../../components/Item';
 import FilmDetails from '../../components/FilmDetails';
 
+// import api from '../../utiles/api.js';
+
 import '../../reset.css';
 import styles from './style.css';
 
