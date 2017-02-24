@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 import Header from '../../components/Header';
 import LikeBtn from '../../components/LikeBtn';
-import Item from '../../components/Item';
+import ItemContainer from '../ItemContainer';
 import FilmDetails from '../../components/FilmDetails';
 
 // import api from '../../utiles/api.js';
@@ -23,7 +23,7 @@ export default class App extends Component {
         <section className={styles.wrapper + ' ' + styles.main}>
           <LikeBtn />
           <div className={styles.content}>
-            <Item />
+            <ItemContainer />
           </div>
         </section>
         <div>

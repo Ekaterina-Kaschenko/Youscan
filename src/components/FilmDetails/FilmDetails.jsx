@@ -9,6 +9,7 @@ const propTypes = {
 }
 
 const FilmDetails = ({ film, genres }) => {
+  console.log(film, genres);
   return (
     <div key={film.id} 
           className={styles['item-card']} >
