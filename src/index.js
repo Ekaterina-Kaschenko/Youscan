@@ -4,16 +4,14 @@ import React    from 'react';
 import {Router, Route, browserHistory} from 'react-router';
 
 import App   from './containers/App';
-import FilmDetails  from './components/FilmDetails';
-
-// import store from './store';
+import FilmDetails  from './containers/FilmDetailsContainer';
 
 import './index.html';
 
 ReactDOM.render(
   <Router history={browserHistory}>
     <Route path='/' component={App} />
-    <Route path='/details/:id' component={FilmDetails} />
+    <Route path='/details/:id' component={FilmDetails } />
   </Router>,
   document.getElementById('root')
 );
