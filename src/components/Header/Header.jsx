@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './styles.css';
 
-import Logo from '../Logo';
+import Logo from './Logo';
 import FilterContainer from '../../containers/FilterContainer';
 import SearchContainer from '../../containers/SearchContainer';
 
