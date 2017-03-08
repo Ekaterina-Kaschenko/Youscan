@@ -3,19 +3,18 @@ import React from 'react';
 import styles from './styles.css';
 
 import Logo from './Logo';
+import HeaderInner from './HeaderInner';
 import FilterContainer from '../../containers/FilterContainer';
-import SearchContainer from '../../containers/SearchContainer';
 
 const Header = () => {
   return (
-    <header className={styles.header}>
+    <HeaderInner>
       <div className={styles['header-left']}>
         <Logo />
         <FilterContainer />
       </div>
-      <SearchContainer />
-    </header>
-  );
-};
+    </HeaderInner>
+  )
+}
 
 export default Header;

@@ -1,7 +1,12 @@
-import React from 'react';
-import Item from '../components/Item'
+import React, { PropTypes } from 'react';
+import Item from '../components/Item';
 
-import api from '../utiles/api.js'
+import api from '../utiles/api.js';
+
+const propTypes = {
+  value: PropTypes.string,
+  films: PropTypes.array
+}
 
 export default class ItemContainer extends React.Component {
   constructor(props) {
@@ -37,3 +42,5 @@ export default class ItemContainer extends React.Component {
     );
   }
 };
+
+ItemContainer.propTypes = propTypes;

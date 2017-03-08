@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styles from './styles.css';
+
+const propTypes = {
+  value: PropTypes.string.isRequired,
+  genres: PropTypes.array.isRequired
+}
 
 const Filter = (props) => {
   return (
@@ -22,5 +27,7 @@ const Filter = (props) => {
     </form>
   );
 };
+
+Filter.propTypes = propTypes;
 
 export default Filter;

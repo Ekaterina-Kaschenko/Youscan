@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
 import Filter from '../components/Filter'
 
 import api from '../utiles/api.js';
+
+const propTypes = {
+  value: PropTypes.string,
+  genres: PropTypes.array,
+  choosenGenre: PropTypes.array
+}
 
 export default class FilterContainer extends React.Component {
   constructor(props) {
@@ -43,3 +49,5 @@ export default class FilterContainer extends React.Component {
     );
   }
 };
+
+FilterContainer.propTypes = propTypes;

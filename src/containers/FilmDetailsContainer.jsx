@@ -2,6 +2,11 @@ import React, { Component, PropTypes } from 'react';
 import FilmDetails from '../components/FilmDetails';
 import api from '../utiles/api.js';
 
+const propTypes = {
+  film: PropTypes.object.isRequired,
+  genres: PropTypes.array.isRequired
+}
+
 export default class FilmDetailsContainer extends Component {
   constructor(props) {
     super(props);
@@ -27,4 +32,4 @@ export default class FilmDetailsContainer extends Component {
   }
 }
 
-  
+FilmDetailsContainer.propTypes = propTypes;

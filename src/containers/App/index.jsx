@@ -1,17 +1,19 @@
 import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
 
 import Header from '../../components/Header';
 import LikeBtn from '../../components/LikeBtn';
 import ItemContainer from '../ItemContainer';
 import FilmDetails from '../../components/FilmDetails';
 
-// import api from '../../utiles/api.js';
-
 import '../../reset.css';
 import styles from './style.css';
 
-export default class App extends Component {
+const propTypes = {
+  children: React.PropTypes.element
+};
 
+export default class App extends Component {
   render() {
     return (
       <div className={styles.app}>
@@ -20,7 +22,7 @@ export default class App extends Component {
             <Header />
           </div>
         </div>
-        <section className={styles.wrapper + ' ' + styles.main}>
+        <section className={classNames (styles.wrapper, styles.main) }>
           <LikeBtn />
           <div className={styles.content}>
             <ItemContainer />
@@ -29,8 +31,11 @@ export default class App extends Component {
         <div>
           {this.props.children}
         </div>
-        
       </div>
     );
   }
 }
+
+App.propTypes = propTypes;
+
+// export default App;

@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import Search from '../components/Search'
 
 import api from '../utiles/api.js';
+
+const propTypes = {
+  value: PropTypes.string.isRequired,
+  films: PropTypes.array.isRequired,
+  searchOpened: PropTypes.bool.isRequired
+}
 
 export default class SearchContainer extends React.Component {
   constructor(props) {

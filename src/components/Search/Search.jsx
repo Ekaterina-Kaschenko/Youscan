@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styles from './styles.css';
 
-import api from '../../utiles/api.js';
+const propTypes = {
+  filter: PropTypes.array,
+  items: PropTypes.array,
+  value: PropTypes.string,
+  films: PropTypes.array.isRequired,
+  searchOpened: PropTypes.bool.isRequired
+}
 
 const Search = (props) => {
   let items = props.items;
@@ -38,5 +44,7 @@ const Search = (props) => {
     </div>
   );
 }
+
+Search.propTypes = propTypes;
 
 export default Search;
