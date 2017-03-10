@@ -47,6 +47,7 @@ export default class SearchContainer extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    
   }
   
   handleClick() {
@@ -54,13 +55,14 @@ export default class SearchContainer extends React.Component {
   }
 
   render() {
+    const { films, searchOpened } = this.state;
     return (
       <Search 
-      films={this.state.films} 
-      onChange={this.handleChange.bind(this)}
-      onClick={this.handleClick.bind(this)}
-      onSubmit={this.handleSubmit.bind(this)}
-      searchOpened={this.state.searchOpened} />
+      films={films} 
+      onChange={() => this.handleChange()}
+      onClick={() => this.handleClick()}
+      onSubmit={(e) => this.handleSubmit(e)}
+      searchOpened={searchOpened} />
     ) 
   }
 };

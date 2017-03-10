@@ -35,10 +35,13 @@ export default class ItemContainer extends React.Component {
         <div>Фильмы не найдены</div>
       );
     }
+
+    const { value, films } = this.state;
+
     return (
       <Item 
-      value={this.state.value}
-      films={this.state.films} />
+      value={value}
+      films={films} />
     );
   }
 };

@@ -2,19 +2,23 @@ import React from 'react';
 
 import styles from './styles.css';
 
-import Logo from './Logo';
-import HeaderInner from './HeaderInner';
-import FilterContainer from '../../containers/FilterContainer';
 
-const Header = () => {
+const propTypes = {
+  children: React.PropTypes.element.isRequired,
+  search: React.PropTypes.object.isRequired
+};
+
+const Header = ({ children, search }) => {
   return (
-    <HeaderInner>
+     <header className={styles.header}>
       <div className={styles['header-left']}>
-        <Logo />
-        <FilterContainer />
+        {children}
       </div>
-    </HeaderInner>
+      {search}
+    </header>
   )
 }
+
+Header.PropTypes = propTypes;
 
 export default Header;

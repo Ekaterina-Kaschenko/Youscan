@@ -18,7 +18,6 @@ export default class FilterContainer extends React.Component {
       genres: [],
       choosenGenre: null,
     };
-    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
@@ -41,11 +40,12 @@ export default class FilterContainer extends React.Component {
 
 	
   render() {
+    const {value, genres} = this.state;
     return (
 			<Filter 
-			value={this.state.value} 
-			genres={this.state.genres} 
-			onChange={this.handleChange} />
+			value={value} 
+			genres={genres} 
+			onChange={() => this.handleChange} />
     );
   }
 };
