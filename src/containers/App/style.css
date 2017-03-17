@@ -28,3 +28,8 @@
 ::-webkit-scrollbar-thumb:window-inactive {
   background: #f8f9fb; 
 }
+
+
+.success-label {
+  background-color: red;
+}

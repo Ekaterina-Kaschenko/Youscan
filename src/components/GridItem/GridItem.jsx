@@ -5,13 +5,18 @@ import classNames from 'classnames';
 import styles from './styles.css';
 
 const propTypes = {
-  films: PropTypes.array.isRequired
+  films: React.PropTypes.arrayOf(React.PropTypes.shape({
+    film: React.PropTypes.object,
+    id: React.PropTypes.number.isRequired,
+    backdrop_path: React.PropTypes.string.isRequired,
+    title: React.PropTypes.string.isRequired
+  }))
 }
 
-const Item = ( props ) => {
+const Item = ({ films }) => {
   return (
     <div className={ styles['search_list'] }>
-        {props.films.map(film => {
+        {films.map(film => {
         return (
             <Link to={ `/details/${film.id}` } 
             className= { styles['search_list-item'] }

@@ -4,9 +4,13 @@ import styles from './styles.css';
 import FilmDetailsGenre from './FilmDetailsGenres';
 
 const propTypes = {
-  film: PropTypes.object.isRequired,
-  genres: PropTypes.array.isRequired
-}
+  film: React.PropTypes.objectOf(React.PropTypes.shape({
+    id: React.PropTypes.number.isRequired,
+    backdrop_path: React.PropTypes.string.isRequired
+  })),
+  genres: React.PropTypes.arrayOf(React.PropTypes.shape({
+    genre: React.PropTypes.string.isRequired
+  }))}
 
 const FilmDetails = ({ film, genres }) => {
   console.log(film, genres);

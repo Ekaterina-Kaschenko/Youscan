@@ -3,10 +3,16 @@ import { Link } from 'react-router';
 import styles from './styles.css';
 
 const propTypes = {
-  filter: PropTypes.array,
+  filter: PropTypes.arrayOf(React.PropTypes.shape({
+    item: PropTypes.object.isRequired
+  })),
   items: PropTypes.array,
   value: PropTypes.string,
-  films: PropTypes.array.isRequired,
+  films: React.PropTypes.arrayOf(React.PropTypes.shape({
+    film: React.PropTypes.object,
+    id: React.PropTypes.number.isRequired,
+    title: React.PropTypes.string.isRequired
+  })),
   searchOpened: PropTypes.bool.isRequired
 }
 

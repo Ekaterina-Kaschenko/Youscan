@@ -1,17 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom'
 
-import classNames from 'classnames';
-
 import Header from '../../components/Header';
-import LikeBtn from '../../components/LikeBtn';
+import { LikeButton } from '../../components/Button';
 
 import Logo from '../../components/Header/Logo';
 
 import SearchContainer from '../../containers/SearchContainer';
 import FilterContainer from '../../containers/FilterContainer';
 
-import ItemContainer from '../ItemContainer';
+import Grid from '../Grid';
 import FilmDetails from '../../components/FilmDetails';
 
 import '../../reset.css';
@@ -26,13 +24,13 @@ export default class App extends Component {
     return (
       <div className={ styles.app }>
         <Header search={ <SearchContainer /> }>
-          <Logo logoSrc={ './logo.png' } />
+          <Logo src={ './logo.png' } />
           <FilterContainer />
         </Header>
         <section className={ styles.container }>
-          <LikeBtn />
+          <LikeButton />
           <div className={ styles.content }>
-            <ItemContainer />
+            <Grid />
           </div>
         </section>
         <div>

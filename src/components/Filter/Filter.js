@@ -3,7 +3,10 @@ import styles from './styles.css';
 
 const propTypes = {
   value: PropTypes.string.isRequired,
-  genres: PropTypes.array.isRequired,
+  genre: React.PropTypes.objectOf(React.PropTypes.shape({ 
+    name: PropTypes.string.isRequired, 
+    id: PropTypes.number.isRequired 
+  })),
   onChange: PropTypes.func.isRequired
 }
 

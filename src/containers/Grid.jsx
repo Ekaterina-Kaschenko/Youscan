@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import Item from '../components/Item';
+import GridItem from '../components/GridItem';
 
 import api from '../utiles/api.js';
 
@@ -8,7 +8,7 @@ const propTypes = {
   films: PropTypes.array
 }
 
-export default class ItemContainer extends React.Component {
+export default class Grid extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,11 +39,11 @@ export default class ItemContainer extends React.Component {
     const { value, films } = this.state;
 
     return (
-      <Item 
+      <GridItem 
       value={ value }
       films={ films } />
     );
   }
 };
 
-ItemContainer.propTypes = propTypes;
+Grid.propTypes = propTypes;
