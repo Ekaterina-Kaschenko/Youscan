@@ -10,9 +10,9 @@ const propTypes = {
   searchOpened: PropTypes.bool.isRequired
 }
 
-const Search = (props) => {
+const Search = ( props ) => {
   let items = props.items;
-    if (props.filter) {
+    if ( props.filter ) {
       items = items.filter( item => 
         item.title.toLowerCase()
         .includes(props.filter.toLowerCase())
@@ -25,22 +25,22 @@ const Search = (props) => {
       styles.textfield;
 
   return (
-    <div className={styles.search}>
-      <form className={styles.form} onSubmit={props.onSubmit}>
+    <div className={ styles.search }>
+      <form className={ styles.form } onSubmit={ props.onSubmit }>
         <input
           type="text"
-          className={inputClassnames}
+          className={ inputClassnames }
           placeholder='Search'
-          value={props.value}
-          onChange={props.onChange} />
-        <button className={styles['button-search']}
-          onClick={props.onClick} >
+          value={ props.value }
+          onChange={ props.onChange } />
+        <button className={ styles['button-search'] }
+          onClick={ props.onClick } >
         </button>
       </form>
       <ul className={ styles.list }>
         {props.films.map(film => 
-          <li key={film.id} className={styles['list-item']}>
-            <Link to={`/details/${film.id}`}>{film.title}</Link>
+          <li key={ film.id } className={ styles['list-item'] }>
+            <Link to={ `/details/${film.id}` }>{ film.title }</Link>
           </li>
         )}
       </ul>

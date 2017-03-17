@@ -27,7 +27,7 @@ export default class FilmDetailsContainer extends Component {
   
   render() {
     return (
-      <FilmDetails film={this.state.film} genres={this.state.genres} />
+      <FilmDetails film={ this.state.film } genres={ this.state.genres } />
     )
   }
 }

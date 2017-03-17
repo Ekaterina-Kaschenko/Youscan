@@ -58,11 +58,11 @@ export default class SearchContainer extends React.Component {
     const { films, searchOpened } = this.state;
     return (
       <Search 
-      films={films} 
-      onChange={(e) => this.handleChange(e)}
-      onClick={() => this.handleClick()}
-      onSubmit={(e) => this.handleSubmit(e)}
-      searchOpened={searchOpened} />
+      films={ films } 
+      onChange={ (e) => this.handleChange(e) }
+      onClick={ () => this.handleClick() }
+      onSubmit={ (e) => this.handleSubmit(e) }
+      searchOpened={ searchOpened } />
     ) 
   }
 };

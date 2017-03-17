@@ -9,9 +9,9 @@ import FilmDetails  from './containers/FilmDetailsContainer';
 import './index.html';
 
 ReactDOM.render(
-  <Router history={browserHistory}>
-    <Route path='/' component={App} />
-    <Route path='/details/:id' component={FilmDetails } />
+  <Router history={ browserHistory }>
+    <Route path='/' component={ App } />
+    <Route path='/details/:id' component={ FilmDetails } />
   </Router>,
   document.getElementById('root')
 );

@@ -40,8 +40,8 @@ export default class ItemContainer extends React.Component {
 
     return (
       <Item 
-      value={value}
-      films={films} />
+      value={ value }
+      films={ films } />
     );
   }
 };

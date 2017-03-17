@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles.css';
 
 const LikeBtn = () => {
-  const LikeClick = (event) => {
+  const LikeClick = ( event ) => {
     console.log('Im like');
   }
   return (

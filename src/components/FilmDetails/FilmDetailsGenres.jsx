@@ -7,8 +7,8 @@ const propTypes = {
 
 const FilmDetailsGenres = ({ id, name }) => {
   return (
-    <p key={id}>
-      {name}
+    <p key={ id }>
+      { name }
     </p>
   )
 }

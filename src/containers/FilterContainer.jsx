@@ -21,7 +21,7 @@ export default class FilterContainer extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({ value: event.target.value });
     let genreID = this.state.genres.filter(g => g.name == event.target.value)[0].id;
     api.getGenresFilm(genreID).then((res) => {
       this.setState({
@@ -43,9 +43,9 @@ export default class FilterContainer extends React.Component {
     const {value, genres} = this.state;
     return (
 			<Filter 
-			value={value} 
-			genres={genres} 
-			onChange={(e) => this.handleChange(e)} />
+			value={ value } 
+			genres={ genres } 
+			onChange={ (e) => this.handleChange(e) } />
     );
   }
 };

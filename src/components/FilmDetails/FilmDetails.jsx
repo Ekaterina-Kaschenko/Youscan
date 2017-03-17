@@ -17,7 +17,7 @@ const FilmDetails = ({ film, genres }) => {
         <div className={ styles.content }>
         <div className={ styles.profile }>
           <div className={ styles['profile__img'] }>
-            <img src={ film.backdrop_path} alt='film' />
+            <img src={ film.backdrop_path } alt='film' />
           </div>
           <div className={ styles.rating }>
             {genres.map(genre => {

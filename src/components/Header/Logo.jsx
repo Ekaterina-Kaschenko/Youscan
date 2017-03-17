@@ -7,7 +7,7 @@ const propTypes = {
 
 const Logo = ({ src }) => {
   return (
-    <a className={styles.logo}>
+    <a className={ styles.logo }>
       <img src={ src } alt='logo' />
     </a>
   );

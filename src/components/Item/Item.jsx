@@ -8,16 +8,16 @@ const propTypes = {
   films: PropTypes.array.isRequired
 }
 
-const Item = (props) => {
+const Item = ( props ) => {
   return (
-    <div className={styles['search_list']}>
+    <div className={ styles['search_list'] }>
         {props.films.map(film => {
         return (
-            <Link to={`/details/${film.id}`} 
+            <Link to={ `/details/${film.id}` } 
             className= { styles['search_list-item'] }
-            key={film.id} >
-              <img src={film.backdrop_path} alt='film' />
-              <h3 className={styles.title}>{film.title}</h3>
+            key={ film.id } >
+              <img src={ film.backdrop_path } alt='film' />
+              <h3 className={ styles.title }>{ film.title }</h3>
             </Link>
         );
       })}

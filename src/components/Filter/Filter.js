@@ -10,14 +10,14 @@ const propTypes = {
 const Filter = ({ value, genres, onChange }) => {
   return (
     <select 
-      className={styles.filter} 
-      value={value} 
-      onChange={onChange} >
+      className={ styles.filter } 
+      value={ value } 
+      onChange={ onChange } >
       <option value='Choose genre'>Choose genre</option>
-      {genres.map(genre => {
+      { genres.map( genre => {
         return (
-          <option value={genre.name} key={genre.id}>
-            {genre.name} + {genre.id}
+          <option value={ genre.name } key={ genre.id }>
+            { genre.name } + { genre.id }
           </option>
         );
       })}

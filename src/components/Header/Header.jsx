@@ -10,10 +10,10 @@ const propTypes = {
 
 const Header = ({ children, search }) => {
   return (
-     <header className={styles.header}>
-      <div className={styles.container}>
-        <div className={styles.toolbar}>
-          {children}
+     <header className={ styles.header }>
+      <div className={ styles.container }>
+        <div className={ styles.toolbar }>
+          { children }
         </div>
         {search}
       </div>
