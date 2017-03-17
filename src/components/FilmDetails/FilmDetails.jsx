@@ -11,24 +11,24 @@ const propTypes = {
 const FilmDetails = ({ film, genres }) => {
   console.log(film, genres);
   return (
-    <div key={film.id} 
-          className={styles['item-card']} >
-      <h3 className={styles.title}>{film.title}</h3>
-        <div className={styles.content}>
-        <div className={styles.profile}>
-          <div className={styles['profile__img']}>
+    <div key={ film.id } 
+          className={ styles['item-card'] } >
+      <h3 className={ styles.title }>{ film.title }</h3>
+        <div className={ styles.content }>
+        <div className={ styles.profile }>
+          <div className={ styles['profile__img'] }>
             <img src={ film.backdrop_path} alt='film' />
           </div>
-          <div className={styles.rating}>
+          <div className={ styles.rating }>
             {genres.map(genre => {
               return (
-                <FilmDetailsGenre genre={genre} />
+                <FilmDetailsGenre genre={ genre } />
               )
             })}
           </div>
         </div>
-        <div className={styles.info}>
-          <div className={styles.description}>{ film.overview}</div>
+        <div className={ styles.info }>
+          <div className={ styles.description }>{ film.overview }</div>
         </div>
       </div>
     </div>
