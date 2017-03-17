@@ -3,22 +3,13 @@
   color: #474f5c;
   font-family: 'Raleway', sans-serif;
   min-height: 100vh;
-}
-
-.wrapper {
-  max-width: 1024px;
-  margin: 0 auto;
-}
-
-.full-row {
-  background-color: #fff;
-  border-bottom: 1px solid #e6e6ea;
-}
-
-.main {
   font-size: 16px;
 }
 
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
 
 ::-webkit-scrollbar {
     width: 6px;

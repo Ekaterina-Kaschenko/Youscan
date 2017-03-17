@@ -1,19 +1,25 @@
 .header {
-  display: flex;
-  justify-content: space-between;
   padding: 1.3em 1em;
+  background-color: #fff;
+  border-bottom: 1px solid #e6e6ea;
+}
 
-  &-left {
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.container {
+  display: flex;
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 .logo {
   display: inline-block;
   width: 55px;
   cursor: pointer;
+}
+
+.toolbar {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 

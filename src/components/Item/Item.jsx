@@ -10,20 +10,18 @@ const propTypes = {
 
 const Item = (props) => {
   return (
-    <ul className={styles.list}>
+    <div className={styles['search_list']}>
         {props.films.map(film => {
         return (
             <Link to={`/details/${film.id}`} 
-            className= { classNames( styles.item, styles.tile ) }
+            className= { styles['search_list-item'] }
             key={film.id} >
-            <li>
-                <img src={film.backdrop_path} alt='film' />
-                <h3 className={styles.name}>{film.title}</h3>
-            </li>
+              <img src={film.backdrop_path} alt='film' />
+              <h3 className={styles.title}>{film.title}</h3>
             </Link>
         );
       })}
-    </ul>
+    </div>
   )
 };
 

@@ -59,7 +59,7 @@ export default class SearchContainer extends React.Component {
     return (
       <Search 
       films={films} 
-      onChange={() => this.handleChange()}
+      onChange={(e) => this.handleChange(e)}
       onClick={() => this.handleClick()}
       onSubmit={(e) => this.handleSubmit(e)}
       searchOpened={searchOpened} />

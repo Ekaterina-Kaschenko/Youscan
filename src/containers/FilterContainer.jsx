@@ -45,7 +45,7 @@ export default class FilterContainer extends React.Component {
 			<Filter 
 			value={value} 
 			genres={genres} 
-			onChange={() => this.handleChange} />
+			onChange={(e) => this.handleChange(e)} />
     );
   }
 };

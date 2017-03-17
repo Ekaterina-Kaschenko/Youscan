@@ -1,25 +1,24 @@
-.like {
+.button {
   display: flex;
   justify-content: flex-end;
-  padding-top: 1em;
-}
 
-.btn {
-  background: url(../LikeBtn/like.svg);
-  width: 40px;
-  height: 40px;
-  background-position: 50%;
-  background-size: 70%;
-  background-repeat: no-repeat;
-  margin: 0 1em;
-  outline: none;
-  border: 1px solid #f8f9fb;
-  transition: .3s ease;
-  border-radius: 5px;
-  cursor: pointer;
-
-  &:hover {
+  &-like {
+    background: url(../LikeBtn/like.svg);
+    width: 40px;
+    height: 40px;
+    background-position: 50%;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    margin: 0 1em;
+    outline: none;
+    border: 1px solid #f8f9fb;
     transition: .3s ease;
-    border: 1px solid #e6e6ea;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      transition: .3s ease;
+      border: 1px solid #e6e6ea;
+    }
   }
 }

@@ -3,28 +3,25 @@ import styles from './styles.css';
 
 const propTypes = {
   value: PropTypes.string.isRequired,
-  genres: PropTypes.array.isRequired
+  genres: PropTypes.array.isRequired,
+  onChange: PropTypes.func.isRequired
 }
 
-const Filter = (props) => {
+const Filter = ({ value, genres, onChange }) => {
   return (
-    <form onSubmit={e => e.preventDefault()}>
-      <label>
-        <select 
-          className={styles.filter} 
-          value={props.value} 
-          onChange={props.onChange} >
-          <option value='Choose genre'>Choose genre</option>
-          {props.genres.map(genre => {
-            return (
-              <option value={genre.name} key={genre.id}>
-                {genre.name} + {genre.id}
-              </option>
-            );
-          })}
-        </select>
-      </label>
-    </form>
+    <select 
+      className={styles.filter} 
+      value={value} 
+      onChange={onChange} >
+      <option value='Choose genre'>Choose genre</option>
+      {genres.map(genre => {
+        return (
+          <option value={genre.name} key={genre.id}>
+            {genre.name} + {genre.id}
+          </option>
+        );
+      })}
+    </select>
   );
 };
 

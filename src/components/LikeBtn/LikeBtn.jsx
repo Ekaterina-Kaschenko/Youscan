@@ -6,10 +6,10 @@ const LikeBtn = () => {
     console.log('Im like');
   }
   return (
-    <div className={styles.like}>
+    <div className={ styles.button }>
       <button 
-      className={styles.btn}
-      onClick={LikeClick}></button>
+      className={ styles['button-like'] }
+      onClick={ LikeClick }></button>
     </div>
   );
 };

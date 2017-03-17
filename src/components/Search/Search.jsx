@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import styles from './styles.css';
 
 const propTypes = {
@@ -20,8 +21,8 @@ const Search = (props) => {
 
   const inputClassnames = 
     props.searchOpened ?
-      [styles['search-text'], styles['search-text__showen']].join(' ') :
-      styles['search-text'];
+      [styles.textfield, styles['textfield__showen']].join(' ') :
+      styles.textfield;
 
   return (
     <div className={styles.search}>
@@ -32,13 +33,15 @@ const Search = (props) => {
           placeholder='Search'
           value={props.value}
           onChange={props.onChange} />
-        <button className={styles['search-button']}
+        <button className={styles['button-search']}
           onClick={props.onClick} >
         </button>
       </form>
-      <ul className={styles['search-results']}>
+      <ul className={ styles.list }>
         {props.films.map(film => 
-          <li key={film.id} className={styles['search-item']}>{film.title}</li>
+          <li key={film.id} className={styles['list-item']}>
+            <Link to={`/details/${film.id}`}>{film.title}</Link>
+          </li>
         )}
       </ul>
     </div>

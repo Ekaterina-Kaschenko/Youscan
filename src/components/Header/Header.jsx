@@ -11,10 +11,12 @@ const propTypes = {
 const Header = ({ children, search }) => {
   return (
      <header className={styles.header}>
-      <div className={styles['header-left']}>
-        {children}
+      <div className={styles.container}>
+        <div className={styles.toolbar}>
+          {children}
+        </div>
+        {search}
       </div>
-      {search}
     </header>
   )
 }

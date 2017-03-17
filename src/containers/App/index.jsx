@@ -24,23 +24,19 @@ const propTypes = {
 export default class App extends Component {
   render() {
     return (
-      <div className={styles.app}>
-        <div className={styles['full-row']}>
-          <div className={styles.wrapper}>
-            <Header search={<SearchContainer />}>
-              <Logo logoSrc={'./logo.png'} />
-              <FilterContainer />
-            </Header>
-          </div>
-        </div>
-        <section className={classNames (styles.wrapper, styles.main) }>
+      <div className={ styles.app }>
+        <Header search={ <SearchContainer /> }>
+          <Logo logoSrc={ './logo.png' } />
+          <FilterContainer />
+        </Header>
+        <section className={ styles.container }>
           <LikeBtn />
-          <div className={styles.content}>
+          <div className={ styles.content }>
             <ItemContainer />
           </div>
         </section>
         <div>
-          {this.props.children}
+          { this.props.children }
         </div>
       </div>
     );
