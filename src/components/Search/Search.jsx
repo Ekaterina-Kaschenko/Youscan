@@ -2,17 +2,19 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import styles from './styles.css';
 
+import { SearchButton } from '../../components/Button'
+
 const propTypes = {
-  filter: PropTypes.arrayOf(React.PropTypes.shape({
+  filter: React.PropTypes.shape({
     item: PropTypes.object.isRequired
-  })),
+  }),
   items: PropTypes.array,
   value: PropTypes.string,
-  films: React.PropTypes.arrayOf(React.PropTypes.shape({
-    film: React.PropTypes.object,
+  films: React.PropTypes.array.isRequired,
+  film: React.PropTypes.shape({
     id: React.PropTypes.number.isRequired,
     title: React.PropTypes.string.isRequired
-  })),
+  }),
   searchOpened: PropTypes.bool.isRequired
 }
 
@@ -39,9 +41,7 @@ const Search = ( props ) => {
           placeholder='Search'
           value={ props.value }
           onChange={ props.onChange } />
-        <button className={ styles['button-search'] }
-          onClick={ props.onClick } >
-        </button>
+        <SearchButton onClick={ props.onClick } />
       </form>
       <ul className={ styles.list }>
         {props.films.map(film => 

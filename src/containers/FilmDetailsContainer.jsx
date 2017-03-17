@@ -3,8 +3,8 @@ import FilmDetails from '../components/FilmDetails';
 import api from '../utiles/api.js';
 
 const propTypes = {
-  film: PropTypes.object.isRequired,
-  genres: PropTypes.array.isRequired
+  film: PropTypes.object,
+  genres: PropTypes.array
 }
 
 export default class FilmDetailsContainer extends Component {

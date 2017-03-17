@@ -1,13 +1,16 @@
 import React from 'react';
+import styles from './styles.css';
 
-class Button extends React.Component{
+export default class Button extends React.Component{
   constructor(props){
     super(props);
     this.className='button';
   }
    render(){
-     return <span className={this.className}>
-        {this.props.children} 
-      </span>
+     return <div className={ styles.button }>
+              <button>
+                {this.props.children} 
+              </button>
+            </div>
    }
 }

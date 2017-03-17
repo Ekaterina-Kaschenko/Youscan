@@ -5,12 +5,12 @@ import classNames from 'classnames';
 import styles from './styles.css';
 
 const propTypes = {
-  films: React.PropTypes.arrayOf(React.PropTypes.shape({
-    film: React.PropTypes.object,
+  films: React.PropTypes.array.isRequired,
+  film: React.PropTypes.shape({
     id: React.PropTypes.number.isRequired,
     backdrop_path: React.PropTypes.string.isRequired,
     title: React.PropTypes.string.isRequired
-  }))
+  })
 }
 
 const Item = ({ films }) => {
