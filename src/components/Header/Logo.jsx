@@ -2,13 +2,13 @@ import React from 'react';
 import styles from './styles.css';
 
 const propTypes = {
-  logoSrc: React.PropTypes.string.isRequired
+  src: React.PropTypes.string.isRequired
 }
 
-const Logo = ({logoSrc}) => {
+const Logo = ({ src }) => {
   return (
     <a className={styles.logo}>
-      <img src={logoSrc} alt='logo' />
+      <img src={ src } alt='logo' />
     </a>
   );
 };

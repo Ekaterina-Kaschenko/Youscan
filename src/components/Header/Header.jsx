@@ -4,8 +4,8 @@ import styles from './styles.css';
 
 
 const propTypes = {
-  children: React.PropTypes.element.isRequired,
-  search: React.PropTypes.object.isRequired
+  children: React.PropTypes.element,
+  search: React.PropTypes.element
 };
 
 const Header = ({ children, search }) => {
