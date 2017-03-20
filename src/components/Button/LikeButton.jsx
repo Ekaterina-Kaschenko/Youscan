@@ -1,17 +1,21 @@
 import React from 'react';
+import Button from './Button'
 import styles from './styles.css';
 
-const LikeButton = () => {
-  const LikeButtonClick = ( event ) => {
-    console.log('Im like');
+class LikeButton extends React.Component {
+  LikeButtonClick = (event) => {
+    console.dir('Im like');
   }
-  return (
-    <div className={ styles.button }>
-      <button 
-      className={ styles['button-like'] }
-      onClick={ LikeButtonClick }></button>
-    </div>
-  );
-};
+
+  render(){
+    return (
+      <div className={ styles.button }>
+        <Button className={ styles['button-like'] } onClick={ this.LikeButtonClick }>
+          {this.props.children}
+        </Button>
+      </div>
+    );
+  }
+}
 
 export default LikeButton;

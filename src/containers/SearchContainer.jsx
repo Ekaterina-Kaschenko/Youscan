@@ -6,8 +6,7 @@ import api from '../utiles/api.js';
 
 const propTypes = {
   value: PropTypes.string.isRequired,
-  films: PropTypes.array.isRequired,
-  searchOpened: PropTypes.bool.isRequired
+  films: PropTypes.array.isRequired
 }
 
 export default class SearchContainer extends React.Component {
@@ -15,8 +14,7 @@ export default class SearchContainer extends React.Component {
     super(props);
     this.state = {
       value: '',
-      films: [],
-      searchOpened: false
+      films: []
     };
   }
 
@@ -50,19 +48,16 @@ export default class SearchContainer extends React.Component {
     
   }
   
-  handleClick() {
-    this.setState({ searchOpened: !this.state.searchOpened });
-  }
+  
 
   render() {
-    const { films, searchOpened } = this.state;
+    
     return (
       <Search 
-      films={ films } 
+      films={ this.state.films } 
       onChange={ (e) => this.handleChange(e) }
-      onClick={ () => this.handleClick() }
-      onSubmit={ (e) => this.handleSubmit(e) }
-      searchOpened={ searchOpened } />
+     
+      onSubmit={ (e) => this.handleSubmit(e) } />
     ) 
   }
 };

@@ -3,9 +3,7 @@ import styles from './styles.css';
 import classNames from 'classnames'
 
 const Button = props => (
-        <button className={`${props.className}`}>
-          {props.children} 
-        </button>
+        <button {...props} />
 );
 
 export default Button;

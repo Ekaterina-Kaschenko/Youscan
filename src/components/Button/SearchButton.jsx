@@ -7,7 +7,7 @@ class SearchButton extends React.Component {
   
   render(){
     return (
-      <Button className={ styles['button-search'] }>
+      <Button className={ styles['button-search'] } onClick={this.props.onClick}>
         {this.props.children}
       </Button>
     )
