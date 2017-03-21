@@ -13,6 +13,17 @@
     margin-top: -3px;
     border-left: 1px solid #e6e6ea;
   }
+  
+  &-button {
+    background: url(../Search/search.svg) no-repeat;
+    background-size: 77%;
+    width: 2em;
+    height: 2em;
+    background-position: 50% 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
 }
 
 .textfield {

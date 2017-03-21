@@ -54,7 +54,7 @@ export default class Search extends React.Component {
             onChange={ props.onChange } />
           <Button 
           onClick={ this.handleClick }
-          className={ styles['button-search'] }
+          className={ styles['search-button'] }
           />
         </form>
         <ul className={ styles.list }>
