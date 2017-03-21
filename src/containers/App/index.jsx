@@ -1,8 +1,8 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom'
 
 import Header from '../../components/Header';
-import { LikeButton } from '../../components/Button';
+// import { LikeButton } from '../../components/Button';
 
 import Logo from '../../components/Header/Logo';
 
@@ -16,10 +16,10 @@ import '../../reset.css';
 import styles from './style.css';
 
 const propTypes = {
-  children: React.PropTypes.element
+  // children: React.PropTypes.element
 };
 
-export default class App extends Component {
+export default class App extends React.Component {
   render() {
     return (
       <div className={ styles.app }>
@@ -28,7 +28,7 @@ export default class App extends Component {
           <FilterContainer />
         </Header>
         <section className={ styles.container }>
-          <LikeButton />
+          {/*<LikeButton />*/}
           <div className={ styles.content }>
             <Grid />
           </div>

@@ -2,7 +2,8 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import styles from './styles.css';
 
-import { SearchButton } from '../../components/Button';
+// import { SearchButton } from '../../components/Button';
+ import Button from '../../components/Button';
 
 const propTypes = {
   filter: React.PropTypes.shape({
@@ -37,13 +38,10 @@ export default class Search extends React.Component {
         )
       }
 
-
     const inputClassnames = 
         this.state.searchOpened ?
           [styles.textfield, styles['textfield__showen']].join(' ') :
           styles.textfield;
-
-   console.log(this.state)
 
     return (
       <div className={ styles.search }>
@@ -54,8 +52,9 @@ export default class Search extends React.Component {
             placeholder='Search'
             value={ props.value }
             onChange={ props.onChange } />
-          <SearchButton 
+          <Button 
           onClick={ this.handleClick }
+          className={ styles['button-search'] }
           />
         </form>
         <ul className={ styles.list }>
