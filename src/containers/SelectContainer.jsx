@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 
-import Filter from '../components/Filter'
+import Select from '../components/Select'
 
 import api from '../utiles/api.js';
 
@@ -10,7 +10,7 @@ const propTypes = {
   choosenGenre: PropTypes.array
 }
 
-export default class FilterContainer extends React.Component {
+export default class SelectContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -42,12 +42,13 @@ export default class FilterContainer extends React.Component {
   render() {
     const {value, genres} = this.state;
     return (
-			<Filter 
+			<Select 
 			value={ value } 
-			genres={ genres } 
+			items={ genres } 
+      label= 'Выбрать жанр' 
 			onChange={ (e) => this.handleChange(e) } />
     );
   }
 };
 
-FilterContainer.propTypes = propTypes;
+SelectContainer.propTypes = propTypes;

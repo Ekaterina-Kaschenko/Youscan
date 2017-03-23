@@ -17,7 +17,7 @@ export default class FilmDetailsContainer extends Component {
 
   } 
 
-  componentWillMount() {
+  componentDidMount() {
     api.getDetails(this.props.params.id).then((res) => {
       this.setState({
         film: res

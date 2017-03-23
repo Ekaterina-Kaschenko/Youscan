@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import Search from '../components/Search'
+import Input from '../components/Input'
 
 import api from '../utiles/api.js';
 
@@ -9,7 +9,7 @@ const propTypes = {
   films: PropTypes.array.isRequired
 }
 
-export default class SearchContainer extends React.Component {
+export default class InputContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -53,7 +53,7 @@ export default class SearchContainer extends React.Component {
   render() {
     
     return (
-      <Search 
+      <Input 
       films={ this.state.films } 
       onChange={ (e) => this.handleChange(e) }
      

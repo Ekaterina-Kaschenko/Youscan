@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import GridItem from '../components/GridItem';
+import Item from '../components/Item';
 
 import api from '../utiles/api.js';
 
@@ -39,7 +39,7 @@ export default class Grid extends React.Component {
     const { value, films } = this.state;
 
     return (
-      <GridItem 
+      <Item 
       value={ value }
       films={ films } />
     );

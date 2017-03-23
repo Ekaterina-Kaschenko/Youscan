@@ -6,6 +6,7 @@ const propTypes = {
 }
 
 const FilmDetailsGenres = ({ id, name }) => {
+  console.log('genre ',id, name)
   return (
     <p key={ id }>
       { name }

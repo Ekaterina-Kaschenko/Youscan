@@ -14,7 +14,7 @@ const propTypes = {
   searchOpened: PropTypes.bool.isRequired
 }
 
-export default class Search extends React.Component {
+export default class Input extends React.Component {
   constructor() {
     super();
     this.state = {

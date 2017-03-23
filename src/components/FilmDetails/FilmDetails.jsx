@@ -8,7 +8,7 @@ const propTypes = {
     id: React.PropTypes.number,
     backdrop_path: React.PropTypes.string
   }),
-  genres: React.PropTypes.array,
+  genres: React.PropTypes.array.isRequired,
   genre: React.PropTypes.string
 }
 
@@ -26,7 +26,7 @@ const FilmDetails = ({ film, genres }) => {
           <div className={ styles.rating }>
             {genres.map(genre => {
               return (
-                <FilmDetailsGenre genre={ genre } />
+                <FilmDetailsGenre name={ genre.name } id={ genre.id } />
               )
             })}
           </div>

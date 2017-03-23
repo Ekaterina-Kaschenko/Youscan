@@ -15,7 +15,7 @@
   }
   
   &-button {
-    background: url(../Search/search.svg) no-repeat;
+    background: url(../Input/search.svg) no-repeat;
     background-size: 77%;
     width: 2em;
     height: 2em;

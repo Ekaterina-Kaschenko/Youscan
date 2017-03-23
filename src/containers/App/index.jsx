@@ -6,8 +6,8 @@ import Header from '../../components/Header';
 
 import Logo from '../../components/Header/Logo';
 
-import SearchContainer from '../../containers/SearchContainer';
-import FilterContainer from '../../containers/FilterContainer';
+import InputContainer from '../../containers/InputContainer';
+import SelectContainer from '../../containers/SelectContainer';
 
 import Grid from '../Grid';
 import FilmDetails from '../../components/FilmDetails';
@@ -15,30 +15,18 @@ import FilmDetails from '../../components/FilmDetails';
 import '../../reset.css';
 import styles from './style.css';
 
-const propTypes = {
-  // children: React.PropTypes.element
-};
-
 export default class App extends React.Component {
   render() {
     return (
       <div className={ styles.app }>
-        <Header search={ <SearchContainer /> }>
+        <Header search={ <InputContainer /> }>
           <Logo src={ './logo.png' } />
-          <FilterContainer />
+          <SelectContainer />
         </Header>
         <section className={ styles.container }>
-          {/*<LikeButton />*/}
-          <div className={ styles.content }>
-            <Grid />
-          </div>
+          <Grid className={ styles.content } />
         </section>
-        <div>
-          { this.props.children }
-        </div>
       </div>
     );
   }
 }
-
-App.propTypes = propTypes;

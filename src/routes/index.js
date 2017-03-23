@@ -1,7 +1,16 @@
-// import React from 'react';
-// import ReactDom from 'react-dom';
-// import {Router, Route, hashHistory} from 'react-router';
+import ReactDOM from 'react-dom';
+import React    from 'react';
+import {Router, Route, browserHistory} from 'react-router';
 
-// import App from '../containers/App';
+import App   from '../containers/App';
+import FilmDetails  from '../containers/FilmDetailsContainer';
 
-// ReactDom.ren
+import '../../src/index.html';
+
+ReactDOM.render(
+  <Router history={ browserHistory }>
+    <Route path='/' component={ App } />
+    <Route path='/details/:id' component={ FilmDetails } />
+  </Router>,
+  document.getElementById('root')
+);
