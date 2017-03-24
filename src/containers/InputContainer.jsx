@@ -1,7 +1,5 @@
 import React, { PropTypes } from 'react';
-
 import Input from '../components/Input'
-
 import api from '../utiles/api.js';
 
 const propTypes = {
@@ -45,18 +43,13 @@ export default class InputContainer extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    
   }
-  
-  
 
   render() {
-    
     return (
       <Input 
       films={ this.state.films } 
       onChange={ (e) => this.handleChange(e) }
-     
       onSubmit={ (e) => this.handleSubmit(e) } />
     ) 
   }

@@ -1,9 +1,8 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
-import styles from './styles.css';
 
-// import { SearchButton } from '../../components/Button';
- import Button from '../../components/Button';
+import Button from '../../components/Button';
+import styles from './styles.css';
 
 const propTypes = {
   filter: React.PropTypes.shape({
@@ -11,19 +10,19 @@ const propTypes = {
   }),
   items: PropTypes.array,
   value: PropTypes.string,
-  searchOpened: PropTypes.bool.isRequired
+  textFieldOpened: PropTypes.bool.isRequired
 }
 
 export default class Input extends React.Component {
   constructor() {
     super();
     this.state = {
-      searchOpened: false
+      textFieldOpened: false
     }
   }
 
   handleClick = () => {
-    this.setState({ searchOpened: !this.state.searchOpened });
+    this.setState({ textFieldOpened: !this.state.textFieldOpened });
     console.log('click')
   }
  
@@ -39,7 +38,7 @@ export default class Input extends React.Component {
       }
 
     const inputClassnames = 
-        this.state.searchOpened ?
+        this.state.textFieldOpened ?
           [styles.textfield, styles['textfield__showen']].join(' ') :
           styles.textfield;
 
@@ -57,10 +56,10 @@ export default class Input extends React.Component {
           className={ styles['search-button'] }
           />
         </form>
-        <ul className={ styles.list }>
+        <ul className={ styles['search-results'] }>
           {props.films.map(film => 
-            <li key={ film.id } className={ styles['list-item'] }>
-              <Link to={ `/details/${film.id}` }>{ film.title }</Link>
+            <li key={ film.id } className={ styles['search-results__item'] } >
+              <Link to={ `/details/${film.id}` }>{ film.title } </Link>
             </li>
           )}
         </ul>

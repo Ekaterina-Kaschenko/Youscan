@@ -1,7 +1,5 @@
 import React, {PropTypes} from 'react';
-
 import Select from '../components/Select'
-
 import api from '../utiles/api.js';
 
 const propTypes = {
@@ -38,7 +36,6 @@ export default class SelectContainer extends React.Component {
     })   
   }
 
-	
   render() {
     const {value, genres} = this.state;
     return (
