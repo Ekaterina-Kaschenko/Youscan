@@ -1,2 +1,2 @@
-import FilmDetails from './components/FilmDetails';
+import FilmDetails from './components';
 export default FilmDetails;
