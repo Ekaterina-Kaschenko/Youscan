@@ -1,17 +1,17 @@
 import React, { PropTypes } from 'react';
 import styles from './styles.css';
 
-const propTypes = {
-  value: PropTypes.string.isRequired,
-  items: PropTypes.array,
-  onChange: PropTypes.func.isRequired
-}
+// const propTypes = {
+//   value: PropTypes.string.isRequired,
+//   items: PropTypes.array,
+//   onChange: PropTypes.func.isRequired
+// }
 
 const Select = ({ value, items, onChange, label }) => {
   return (
     <select 
       className={ styles.filter } 
-      value={ value } 
+      /*selectedValue={ value } */
       onChange={ onChange } >
       <option value={label}>{label}</option>
       { items.map( item => {
@@ -25,6 +25,6 @@ const Select = ({ value, items, onChange, label }) => {
   );
 };
 
-Select.propTypes = propTypes;
+// Select.propTypes = propTypes;
 
 export default Select;

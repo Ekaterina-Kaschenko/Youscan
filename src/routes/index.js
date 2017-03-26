@@ -3,7 +3,7 @@ import React    from 'react';
 import {Router, Route, browserHistory} from 'react-router';
 
 import App   from '../containers/App';
-import FilmDetails  from '../containers/FilmDetailsContainer';
+import FilmDetails  from '../containers/Container';
 
 import '../../src/index.html';
 
