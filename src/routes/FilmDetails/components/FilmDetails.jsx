@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import styles from './styles.css';
 
-import FilmDetailsGenre from '../components/FilmDetailsGenres.jsx';
+import FilmDetailsGenre from './FilmDetailsGenres';
 
 const propTypes = {
   // item: PropTypes.shape({
