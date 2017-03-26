@@ -3,7 +3,7 @@ import FilmDetails from '../components/FilmDetails';
 import api from '../utiles/api.js';
 
 const propTypes = {
-  film: PropTypes.object,
+  item: PropTypes.object,
   genres: PropTypes.array
 }
 
@@ -11,7 +11,7 @@ export default class FilmDetailsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      film: {},
+      item: {},
       genres: []
     };
 
@@ -20,14 +20,14 @@ export default class FilmDetailsContainer extends Component {
   componentDidMount() {
     api.getDetails(this.props.params.id).then((res) => {
       this.setState({
-        film: res
+        item: res
       });
     })
   }
   
   render() {
     return (
-      <FilmDetails film={ this.state.film } genres={ this.state.genres } />
+      <FilmDetails item={ this.state.item } genres={ this.state.genres } />
     )
   }
 }

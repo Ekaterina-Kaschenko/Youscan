@@ -4,21 +4,21 @@ import { Link } from 'react-router';
 import styles from './styles.css';
 
 const propTypes = {
-  film: PropTypes.shape({
+  item: PropTypes.shape({
     id: PropTypes.number.isRequired,
     backdrop_path: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired
   })
 }
 
-const Item = ({ film }) => {
+const Item = ({ item: { id, backdrop_path, title } }) => {
   return (
     <Link
-      to={ `/details/${film.id}` } 
+      to={ `/details/${id}` } 
       className= { styles['list-item'] }
-      key={ film.id }>
-      <img src={ film.backdrop_path } alt='film' />
-      <h3 className={ styles.title }>{ film.title }</h3>
+      key={ id }>
+      <img src={ backdrop_path } alt='film' />
+      <h3 className={ styles.title }>{ title }</h3>
     </Link>
   )
 };

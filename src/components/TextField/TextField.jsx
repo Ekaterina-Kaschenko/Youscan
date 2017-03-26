@@ -13,7 +13,7 @@ const propTypes = {
   textFieldOpened: PropTypes.bool.isRequired
 }
 
-export default class Input extends Component {
+export default class TextField extends Component {
   constructor() {
     super();
     this.state = {
@@ -37,7 +37,7 @@ export default class Input extends Component {
         )
       }
 
-    const inputClassnames = 
+    const TextFieldClassnames = 
         this.state.textFieldOpened ?
           [styles.textfield, styles['textfield__showen']].join(' ') :
           styles.textfield;
@@ -47,7 +47,7 @@ export default class Input extends Component {
         <form className={ styles.form } onSubmit={ props.onSubmit }>
           <input
             type="text"
-            className={ inputClassnames }
+            className={ TextFieldClassnames }
             placeholder='Search'
             value={ props.value }
             onChange={ props.onChange } />
@@ -57,9 +57,9 @@ export default class Input extends Component {
           />
         </form>
         <ul className={ styles['search-results'] }>
-          {props.films.map(film => 
-            <li key={ film.id } className={ styles['search-results__item'] } >
-              <Link to={ `/details/${film.id}` }>{ film.title } </Link>
+          {props.films.map(item => 
+            <li key={ item.id } className={ styles['search-results__item'] } >
+              <Link to={ `/details/${item.id}` }>{ item.title } </Link>
             </li>
           )}
         </ul>
@@ -67,3 +67,5 @@ export default class Input extends Component {
     );
   }
 }
+
+TextField.PropTypes = propTypes;

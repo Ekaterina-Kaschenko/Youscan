@@ -4,7 +4,7 @@ import styles from './styles.css';
 import FilmDetailsGenre from './FilmDetailsGenres';
 
 const propTypes = {
-  film: PropTypes.shape({
+  item: PropTypes.shape({
     id: PropTypes.number,
     backdrop_path: PropTypes.string
   }),
@@ -12,16 +12,16 @@ const propTypes = {
   genre: PropTypes.string
 }
 
-const FilmDetails = ({ film, genres }) => {
-  console.log(film, genres);
+const FilmDetails = ({ item, genres }) => {
+  console.log(item, genres);
   return (
-    <div key={ film.id } 
+    <div key={ item.id } 
           className={ styles['item-card'] } >
-      <h3 className={ styles.title }>{ film.title }</h3>
+      <h3 className={ styles.title }>{ item.title }</h3>
         <div className={ styles.content }>
         <div className={ styles.profile }>
           <div className={ styles['profile__img'] }>
-            <img src={ film.backdrop_path } alt='film' />
+            <img src={ item.backdrop_path } alt='film' />
           </div>
           <div className={ styles.rating }>
             {genres.map(genre => {
@@ -32,7 +32,7 @@ const FilmDetails = ({ film, genres }) => {
           </div>
         </div>
         <div className={ styles.info }>
-          <div className={ styles.description }>{ film.overview }</div>
+          <div className={ styles.description }>{ item.overview }</div>
         </div>
       </div>
     </div>

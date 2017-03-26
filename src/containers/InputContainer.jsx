@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
-import Input from '../components/Input'
+import TextField from '../components/TextField'
 import api from '../utiles/api.js';
 
 const propTypes = {
   value: PropTypes.string.isRequired,
-  films: PropTypes.array.isRequired
+  data: PropTypes.array.isRequired
 }
 
 export default class InputContainer extends React.Component {
@@ -12,7 +12,7 @@ export default class InputContainer extends React.Component {
     super(props);
     this.state = {
       value: '',
-      films: []
+      data: []
     };
   }
 
@@ -20,7 +20,7 @@ export default class InputContainer extends React.Component {
     const value = event.target.value;
     if (!value) {
       this.setState({
-        films: [],
+        data: [],
         value
       });
       return;
@@ -28,14 +28,14 @@ export default class InputContainer extends React.Component {
     api.searchFilms(event.target.value).then((res) => {
       const titles = [];
       const appliedFilms = [];
-      const films = res.forEach(item => {
+      const data = res.forEach(item => {
         if (titles.includes(item.title)) { return; }
         titles.push(item.title);
         appliedFilms.push(item);
       });
 
       this.setState({
-        films: appliedFilms,
+        data: appliedFilms,
         value
       });
     });
@@ -47,8 +47,8 @@ export default class InputContainer extends React.Component {
 
   render() {
     return (
-      <Input 
-      films={ this.state.films } 
+      <TextField 
+      films={ this.state.data } 
       onChange={ (e) => this.handleChange(e) }
       onSubmit={ (e) => this.handleSubmit(e) } />
     ) 
