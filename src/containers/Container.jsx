@@ -15,15 +15,23 @@ export default class Container extends Component {
       choosenGenre: null,
       selectedValue: 'Choose genre'
     };
+    this.getGenres = api.getGenres.bind(this)
+    this.getDetails = api.getDetails.bind(this)
+  }
 
-  } 
 
   componentWillMount() {
-    api.getGenres().then((res) => {
+    this.getGenres().then((res) => {
       this.setState({
         genres: res
       });
-    }).bind(this)   
+    })
+
+    this.getDetails(this.props.params.id).then((res) => {
+      this.setState({
+        item: res
+      });
+    })
   }
 
   textFieldChange(event) {
@@ -71,8 +79,8 @@ export default class Container extends Component {
     return (
       <div>
         <FilmDetails 
-          item={ this.state.item } 
-          genres={ this.state.genres } />
+          genres={ this.state.genres }
+          details={ this.getDetails } />
         <TextField 
           films={ this.state.data } 
           onChange={ (e) => this.textFieldChange(e) }
