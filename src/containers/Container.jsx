@@ -7,7 +7,6 @@ import api from '../utiles/api.js';
 export default class Container extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props)
     this.state = {
       item: {},
       genres: [],
@@ -19,21 +18,12 @@ export default class Container extends Component {
 
   } 
 
-  componentDidMount() {
-    console.log('api = ', this.props)
-    api.getDetails(this.props.params.id).then((res) => {
-      this.setState({
-        item: res
-      });
-    })
-  }
-
   componentWillMount() {
     api.getGenres().then((res) => {
       this.setState({
         genres: res
       });
-    })   
+    }).bind(this)   
   }
 
   textFieldChange(event) {
