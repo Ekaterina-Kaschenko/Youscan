@@ -4,6 +4,7 @@ coverage
 build
 
 .idea
+.vscode
 .DS_Store
 npm-debug.log
 stats.json

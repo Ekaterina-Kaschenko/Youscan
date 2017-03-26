@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styles from './styles.css';
 
 const propTypes = {
-  src: React.PropTypes.string.isRequired
+  src: PropTypes.string.isRequired
 }
 
 const Logo = ({ src }) => {

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import styles from './styles.css';
 
 
 const propTypes = {
-  children: React.PropTypes.element,
-  search: React.PropTypes.element
+  children: PropTypes.element,
+  search: PropTypes.element
 };
 
 const Header = ({ children, search }) => {

@@ -1,11 +1,11 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import { Link } from 'react-router';
 
 import Button from '../../components/Button';
 import styles from './styles.css';
 
 const propTypes = {
-  filter: React.PropTypes.shape({
+  filter: PropTypes.shape({
     item: PropTypes.object.isRequired
   }),
   items: PropTypes.array,
@@ -13,7 +13,7 @@ const propTypes = {
   textFieldOpened: PropTypes.bool.isRequired
 }
 
-export default class Input extends React.Component {
+export default class Input extends Component {
   constructor() {
     super();
     this.state = {

@@ -4,12 +4,12 @@ import styles from './styles.css';
 import FilmDetailsGenre from './FilmDetailsGenres';
 
 const propTypes = {
-  film: React.PropTypes.shape({
-    id: React.PropTypes.number,
-    backdrop_path: React.PropTypes.string
+  film: PropTypes.shape({
+    id: PropTypes.number,
+    backdrop_path: PropTypes.string
   }),
-  genres: React.PropTypes.array.isRequired,
-  genre: React.PropTypes.string
+  genres: PropTypes.array.isRequired,
+  genre: PropTypes.string
 }
 
 const FilmDetails = ({ film, genres }) => {

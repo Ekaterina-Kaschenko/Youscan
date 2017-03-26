@@ -1,11 +1,16 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import { Link } from 'react-router';
 import Item from '../Item';
 import api from '../../utiles/api.js';
 
-import styles from './styles.css'
+import styles from './styles.css';
 
-export default class Items extends React.Component {
+const propTypes = {
+  films: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired
+}
+
+export default class Items extends Component {
   constructor(props) {
     super(props);
     this.state = {

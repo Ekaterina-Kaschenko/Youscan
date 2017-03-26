@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React, {PropTypes, Component} from 'react';
 import Select from '../components/Select'
 import api from '../utiles/api.js';
 
@@ -8,7 +8,7 @@ const propTypes = {
   choosenGenre: PropTypes.array
 }
 
-export default class SelectContainer extends React.Component {
+export default class SelectContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -40,10 +40,10 @@ export default class SelectContainer extends React.Component {
     const {value, genres} = this.state;
     return (
 			<Select 
-			value={ value } 
-			items={ genres } 
-      label= 'Выбрать жанр' 
-			onChange={ (e) => this.handleChange(e) } />
+        value={ value } 
+        items={ genres } 
+        label= 'Выбрать жанр' 
+        onChange={ (e) => this.handleChange(e) } />
     );
   }
 };

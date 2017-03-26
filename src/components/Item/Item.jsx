@@ -4,10 +4,10 @@ import { Link } from 'react-router';
 import styles from './styles.css';
 
 const propTypes = {
-  film: React.PropTypes.shape({
-    id: React.PropTypes.number.isRequired,
-    backdrop_path: React.PropTypes.string.isRequired,
-    title: React.PropTypes.string.isRequired
+  film: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    backdrop_path: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
   })
 }
 

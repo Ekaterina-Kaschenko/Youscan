@@ -15,6 +15,11 @@
     transition: .6s ease;
     transform: translateY(-2px); 
   }
+
+  img {
+    max-width: 100%;
+    border-bottom: 1px solid #01b3bf
+  }
 }
 
 .title {
@@ -27,6 +32,4 @@
 }
 
 
-img {
-  max-width: 100%;
-}
+

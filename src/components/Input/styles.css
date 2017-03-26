@@ -15,17 +15,15 @@
 
     &__item {
       padding: .2rem .3rem;
-      transition: .6s ease;
+      transition: .3s ease-in-out;
+
+      &:hover {
+        background-color: rgba(230, 230, 230, .5);
+     }
 
       a {
         text-decoration: none;
-        color: rgba(70, 80, 88, 0.92);
-      }
-
-      &:hover {
-        transition: .6s ease;
-        background-color: rgba(1,179,191,.06);
-        
+        color: #01b3bf;
       }
     }
   }
@@ -46,15 +44,14 @@
   outline: none;
   width: 0;
   border: none;
-  transition: width .3s ease;
+  transition: width .3s ease-in-out;
   margin-right: 5px;
   padding: .2em;
 
   &__showen {
     border-bottom: 2px solid #9ed4d6;
-    width: 150px;
+    width: 140px;
     max-width: 100%;
-    transition: width .3s ease;
   }
 }
 

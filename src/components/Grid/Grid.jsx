@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import styles from './styles.css';
 
 const propTypes = {
-  children: React.PropTypes.element
+  children: PropTypes.element
 }
 
 const Grid = ({children}) => {
