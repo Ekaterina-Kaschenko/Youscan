@@ -1,3 +1,7 @@
+import React from 'react';
+
+const routes = createRoutes();
+
 const createRoutes = () => ({ 
   path : '/', 
   component : '../layouts', 
@@ -6,3 +10,5 @@ const createRoutes = () => ({
       FilmDetails() 
     ] 
 })
+
+export default createRoutes;

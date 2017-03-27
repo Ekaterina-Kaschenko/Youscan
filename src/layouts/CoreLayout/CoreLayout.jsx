@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
 import Header from '../../components/Header';
 import Logo from '../../components/Header/Logo';
 import '../../reset.css';
