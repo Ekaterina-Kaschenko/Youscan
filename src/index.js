@@ -1,19 +1,12 @@
 // import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 import React    from 'react';
-import {Router, Route, browserHistory} from 'react-router';
+import routes from './routes/createRoutes'
 
-import App   from './containers/App';
-// import FilmDetails  from './components/FilmDetails';
-
-import './index.html';
+import AppContainer   from './containers/AppContainer';
 
 ReactDOM.render(
-  <Router history={ browserHistory }>
-    <Route path='/' component={ App } />
-    {/*<Route path='/details/:id' component={ FilmDetails } />*/}
-  </Router>,
-  document.getElementById('root')
+  <AppContainer routes={routes} />, document.getElementById('root')
 );
 
 // ReactDOM.render(
