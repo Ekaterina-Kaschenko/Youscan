@@ -1,14 +1,16 @@
 import React from 'react';
+import Home from './Home';
+import FilmDetails from './FilmDetails';
+import CoreLayout from '../layouts/CoreLayout';
 
-const routes = createRoutes();
 
-const createRoutes = () => ({ 
+const createRoutes = (store={}) => ({ 
   path : '/', 
-  component : '../layouts', 
+  component : CoreLayout, 
   indexRoute : Home, 
-  childRoutes : [ 
-      FilmDetails() 
-    ] 
+  childRoutes : [
+    FilmDetails()
+  ] 
 })
 
 export default createRoutes;

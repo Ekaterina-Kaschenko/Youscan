@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Header from '../../components/Header';
 import Logo from '../../components/Header/Logo';
 import '../../reset.css';
-import styles from './style.css';
+import styles from './styles.css';
 
 export default class CoreLayouts extends Component {
   render() {
@@ -12,7 +12,7 @@ export default class CoreLayouts extends Component {
         <Header> 
           <Logo src={ './logo.png' } /> 
         </Header> 
-        {children}
+        {this.props.children}
       </div>
     )
   }
