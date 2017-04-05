@@ -82,17 +82,16 @@ export default class CoreLayouts extends Component {
     console.log(this.props)
     return (
       <div className={ styles.app }> 
-        <Header> 
+        <Header search = {<TextField 
+                films={ this.state.data } 
+                onChange={ (e) => this.textFieldChange(e) }
+                onSubmit={ (e) => this.handleSubmit(e) } />}> 
           <Logo src={ '/logo.png' } /> 
-            <Select 
-              selectedValue={ value } 
-              items={ genres } 
-              label= 'Выбрать жанр' 
-              onChange={ (e) => this.selectChange(e) } />
-            <TextField 
-              films={ this.state.data } 
-              onChange={ (e) => this.textFieldChange(e) }
-              onSubmit={ (e) => this.handleSubmit(e) } />
+          <Select 
+            selectedValue={ value } 
+            items={ genres } 
+            label= 'Выбрать жанр' 
+            onChange={ (e) => this.selectChange(e) } />
         </Header> 
         {this.props.children}
       </div>
