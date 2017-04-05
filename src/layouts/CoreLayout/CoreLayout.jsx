@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import ReactDOM from 'react-dom';
+import Container from '../../containers/Container';
 import Header from '../../components/Header';
 import Logo from '../../components/Header/Logo';
 import '../../reset.css';
@@ -11,6 +12,7 @@ export default class CoreLayouts extends Component {
       <div className={ styles.app }> 
         <Header> 
           <Logo src={ './logo.png' } /> 
+          {console.log(<Container />)}
         </Header> 
         {this.props.children}
       </div>
