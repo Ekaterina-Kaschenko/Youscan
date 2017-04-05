@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import styles from './styles.css';
 
 const propTypes = {
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   items: PropTypes.array,
   onChange: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired

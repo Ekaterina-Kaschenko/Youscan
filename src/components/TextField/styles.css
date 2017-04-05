@@ -29,7 +29,7 @@
   }
   
   &-button {
-    background: url(../TextField/search.svg) no-repeat;
+    background: url(/search.svg) no-repeat;
     background-size: 77%;
     width: 2em;
     height: 2em;
