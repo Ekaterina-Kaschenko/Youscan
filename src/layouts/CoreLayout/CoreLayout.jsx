@@ -90,8 +90,7 @@ export default class CoreLayouts extends Component {
           <Select 
             selectedValue={ value } 
             items={ genres } 
-            label= 'Выбрать жанр' 
-            onChange={ (e) => this.selectChange(e) } />
+            label= 'Выбрать жанр' />
         </Header> 
         {this.props.children}
       </div>
