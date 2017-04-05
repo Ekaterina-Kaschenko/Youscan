@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import FilmDetails from '../routes/FilmDetails/components';
 import TextField from '../components/TextField';
 import Select from '../components/Select';
 import api from '../utiles/api.js';
@@ -78,9 +77,6 @@ export default class Container extends Component {
     console.log(this.props)
     return (
       <div>
-        <FilmDetails 
-          genres={ this.state.genres }
-          details={ this.getDetails } />
         <TextField 
           films={ this.state.data } 
           onChange={ (e) => this.textFieldChange(e) }
