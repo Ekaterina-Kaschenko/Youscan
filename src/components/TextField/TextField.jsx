@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import { Link } from 'react-router';
+import classnames from 'classnames';
 
 import Button from '../../components/Button';
 import styles from './styles.css';
@@ -38,9 +39,13 @@ export default class TextField extends Component {
       }
 
     const TextFieldClassnames = 
-        this.state.textFieldOpened ?
-          [styles.textfield, styles['textfield__showen']].join(' ') :
-          styles.textfield;
+      this.state.textFieldOpened ?
+        [styles.textfield, styles['textfield__showen']].join(' ') :
+        styles.textfield;
+      
+      // this.state.textFieldOpened ?
+      //   classnames({styles.textfield}, styles['textfield__showen'] : 
+      //   styles.textfield ) 
 
     return (
       <div className={ styles.search }>

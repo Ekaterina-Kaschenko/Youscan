@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import FilmDetails from '../components/FilmDetails';
+import FilmDetails from '../routes/FilmDetails/components';
 import TextField from '../components/TextField';
 import Select from '../components/Select';
 import api from '../utiles/api.js';
