@@ -12,7 +12,6 @@ export default class CoreLayouts extends Component {
       <div className={ styles.app }> 
         <Header> 
           <Logo src={ './logo.png' } /> 
-          {console.log(<Container />)}
         </Header> 
         {this.props.children}
       </div>
