@@ -1,0 +1,40 @@
+.item-card {
+  padding: 4% 10%;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile {
+  width: 40%;
+}
+
+.info {
+  width: 60%;
+  padding-left: 2em;
+}
+
+.title {
+  font-weight: 400;
+  color: #01b3bf;
+  font-size: 1.3em;
+  padding: 1em 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: left;
+}
+
+.rating {
+  padding-top: 1em;
+}
+
+.description {
+  font-size: .8em;
+  line-height: 1.4em;
+  text-align: justify;
+  padding: 1em;
+  padding-top: 0;
+}

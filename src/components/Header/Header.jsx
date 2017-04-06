@@ -9,7 +9,6 @@ const propTypes = {
 };
 
 const Header = ({ children, search }) => {
-  // {console.log(children, search, props)}
   return (
      <header className={ styles.header }>
       <div className={ styles.container }>
