@@ -12,7 +12,7 @@ const Select = ({ value, items, onChange, label }) => {
   return (
     <select 
       className={ styles.filter } 
-      selectedValue={ value } 
+      value={ value } 
       onChange={ onChange } >
       <option value={label}>{label}</option>
       { items.map( item => {

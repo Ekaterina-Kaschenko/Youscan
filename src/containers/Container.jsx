@@ -1,14 +1,10 @@
-import React, { PropTypes, Component } from 'react';
-import ReactDOM from 'react-dom';
-import Header from '../../components/Header';
-import Logo from '../../components/Header/Logo';
-import TextField from '../../components/TextField';
-import Select from '../../components/Select';
-import api from '../../utiles/api.js';
-import '../../reset.css';
-import styles from './styles.css';
+import React, { Component, PropTypes } from 'react';
+import FilmDetails from '../components/FilmDetails';
+import TextField from '../components/TextField';
+import Select from '../components/Select';
+import api from '../utiles/api.js';
 
-export default class CoreLayouts extends Component {
+export default class Container extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -76,24 +72,26 @@ export default class CoreLayouts extends Component {
   handleSubmit(event) {
     event.preventDefault();
   }
-
+  
   render() {
     const {value, genres} = this.state;
+    console.log(this.props)
     return (
-      <div className={ styles.app }> 
-        <Header search = {<TextField 
-                films={ this.state.data } 
-                onChange={ (e) => this.textFieldChange(e) }
-                onSubmit={ (e) => this.handleSubmit(e) } />}> 
-          <Logo src={ '/logo.png' } /> 
-          <Select 
-            value={ this.state.value } 
-            items={ genres } 
-            label= 'Выбрать жанр'
-            onChange={ (e) => this.selectChange(e) } />
-        </Header> 
-        {this.props.children}
+      <div>
+        <FilmDetails 
+          genres={ this.state.genres }
+          details={ this.getDetails } />
+        <TextField 
+          films={ this.state.data } 
+          onChange={ (e) => this.textFieldChange(e) }
+          onSubmit={ (e) => this.handleSubmit(e) } />
+        <Select 
+          selectedValue={ value } 
+          items={ genres } 
+          label= 'Выбрать жанр' 
+          onChange={ (e) => this.selectChange(e) } />
       </div>
     )
   }
 }
+
