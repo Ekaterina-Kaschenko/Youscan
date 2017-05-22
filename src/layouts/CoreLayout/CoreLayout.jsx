@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react'
+import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import Header from '../../components/Header'
 import Logo from '../../components/Header/Logo'
@@ -6,7 +6,7 @@ import TextField from '../../components/TextField'
 import Select from '../../components/Select'
 import api from '../../utiles/api.js'
 import '../../reset.css'
-import styles from './styles.css'
+import styles from './styles.scss'
 
 export default class CoreLayouts extends Component {
   constructor (props) {

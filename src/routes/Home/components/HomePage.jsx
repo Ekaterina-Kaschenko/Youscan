@@ -1,5 +1,5 @@
-import React, {PropTypes, Component} from 'react'
-import styles from './styles.css'
+import React from 'react'
+import styles from './styles.scss'
 import Grid from '../../../components/Grid'
 import Items from '../../../components/Items'
 

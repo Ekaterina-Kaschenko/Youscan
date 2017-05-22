@@ -1,12 +1,12 @@
-const webpack = require('webpack');
-const path    = require('path');
-// const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const webpack = require('webpack')
+const path    = require('path')
+// const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
-const nodeEnv = process.env.NODE_ENV || 'development';
-const isProd  = nodeEnv === 'production';
+const nodeEnv = process.env.NODE_ENV || 'development'
+const isProd  = nodeEnv === 'production'
 
-const sourcePath = path.join(__dirname, `./src`);
-const distPath   = path.join(__dirname, `./dist`);
+const sourcePath = path.join(__dirname, `./src`)
+const distPath   = path.join(__dirname, `./dist`)
 
 const plugins = [
   new webpack.optimize.CommonsChunkPlugin({
@@ -48,13 +48,13 @@ if (isProd) {
         comments: false
       },
     })
-  );
+  )
 }
 
 if (!isProd) {
   plugins.push(
     new webpack.HotModuleReplacementPlugin()
-  );
+  )
 }
 
 module.exports = {
@@ -79,7 +79,7 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
+        test: /\.(css|scss)$/,
         exclude: /node_modules/,
         loaders: [
           'style-loader?sourceMap',
@@ -94,7 +94,7 @@ module.exports = {
           'babel-loader'
         ]
       }, {
-  		  test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif)$/,
         loaders: [
           {
             loader: 'file-loader',
@@ -109,14 +109,14 @@ module.exports = {
             }
           }
         ]
-  	  }, {
-  		  test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+      }, {
+        test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]'
         }
-  	  }
-    ],
+      }
+    ]
   },
   resolve: {
     extensions: ['.webpack-loader.js', '.web-loader.js', '.loader.js', '.js', '.jsx'],
@@ -144,8 +144,8 @@ module.exports = {
       version:    false,
       warnings:   true,
       colors: {
-        green: '\u001b[32m',
+        green: '\u001b[32m'
       }
     }
   }
-};
+}

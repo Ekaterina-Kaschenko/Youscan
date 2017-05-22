@@ -1,7 +1,8 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router'
 
-import styles from './styles.css'
+import styles from './styles.scss'
 
 const propTypes = {
   item: PropTypes.shape({

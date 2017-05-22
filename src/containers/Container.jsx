@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, {Component} from 'react'
+// import PropTypes from 'prop-types'
 import TextField from '../components/TextField'
 import Select from '../components/Select'
 import api from '../utiles/api.js'

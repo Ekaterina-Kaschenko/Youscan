@@ -1,9 +1,10 @@
-import React, { PropTypes, Component } from 'react';
-import { Link } from 'react-router';
-import classnames from 'classnames';
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
+import {Link} from 'react-router'
+import classnames from 'classnames'
 
-import Button from '../../components/Button';
-import styles from './styles.css';
+import Button from '../../components/Button'
+import styles from './styles.scss'
 
 const propTypes = {
   filter: PropTypes.shape({

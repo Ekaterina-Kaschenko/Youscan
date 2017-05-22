@@ -1,8 +1,9 @@
-import React, { PropTypes, Component } from 'react'
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import Item from '../Item'
 import api from '../../utiles/api.js'
 
-import styles from './styles.css'
+import styles from './styles.scss'
 
 const propTypes = {
   data: PropTypes.array.isRequired,
