@@ -1,6 +1,6 @@
 const webpack = require('webpack')
 const path    = require('path')
-// const ExtractTextPlugin = require("extract-text-webpack-plugin")
+// const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const nodeEnv = process.env.NODE_ENV || 'development'
 const isProd  = nodeEnv === 'production'
@@ -94,7 +94,7 @@ module.exports = {
           'babel-loader'
         ]
       }, {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|svg)$/,
         loaders: [
           {
             loader: 'file-loader',
@@ -110,7 +110,7 @@ module.exports = {
           }
         ]
       }, {
-        test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        test: /\.(ttf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]'
