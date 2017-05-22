@@ -1,19 +1,19 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react'
 
 const propTypes = {
   name: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired
 }
 
-const FilmDetailsGenres = ({ id, name }) => {
-  console.log('genre ',id, name)
+const FilmDetailsGenres = ({id, name}) => {
+  console.log('genre ', id, name)
   return (
-    <p key={ id }>
-      { name }
+    <p key={id}>
+      {name}
     </p>
   )
 }
 
-FilmDetailsGenres.propTypes = propTypes;
+FilmDetailsGenres.propTypes = propTypes
 
-export default FilmDetailsGenres;
+export default FilmDetailsGenres

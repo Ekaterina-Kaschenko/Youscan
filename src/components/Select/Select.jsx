@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-import styles from './styles.css';
+import React, { PropTypes } from 'react'
+import styles from './styles.css'
 
 const propTypes = {
   value: PropTypes.string,
@@ -10,22 +10,22 @@ const propTypes = {
 
 const Select = ({ value, items, onChange, label }) => {
   return (
-    <select 
-      className={ styles.filter } 
-      value={ value } 
-      onChange={ onChange } >
+    <select
+      className={styles.filter}
+      value={value}
+      onChange={onChange} >
       <option value={label}>{label}</option>
-      { items.map( item => {
+      { items.map(item => {
         return (
-          <option value={ item.name } key={ item.id }>
+          <option value={item.name} key={item.id}>
             { item.name } + { item.id }
           </option>
-        );
+        )
       })}
     </select>
-  );
-};
+  )
+}
 
-Select.propTypes = propTypes;
+Select.propTypes = propTypes
 
-export default Select;
+export default Select

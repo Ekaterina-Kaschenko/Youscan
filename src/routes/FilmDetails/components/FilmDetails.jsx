@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react';
-import styles from './styles.css';
+import React, { PropTypes } from 'react'
+import styles from './styles.css'
 
-import FilmDetailsGenre from './FilmDetailsGenres';
+import FilmDetailsGenre from './FilmDetailsGenres'
 
 const propTypes = {
   item: PropTypes.shape({
@@ -13,32 +13,32 @@ const propTypes = {
 }
 
 const FilmDetails = ({ item, genres }) => {
-  console.log(item, genres);
+  console.log(item, genres)
   return (
-    <div key={ item.id } 
-          className={ styles['item-card'] } >
-      <h3 className={ styles.title }>{ item.title }</h3>
-        <div className={ styles.content }>
-        <div className={ styles.profile }>
-          <div className={ styles['profile__img'] }>
-            <img src={ item.backdrop_path } alt='film' />
+    <div key={item.id}
+      className={styles['item-card']} >
+      <h3 className={styles.title}>{ item.title }</h3>
+      <div className={styles.content}>
+        <div className={styles.profile}>
+          <div className={styles['profile__img']}>
+            <img src={item.backdrop_path} alt='film' />
           </div>
-          <div className={ styles.rating }>
+          <div className={styles.rating}>
             {genres.map(genre => {
               return (
-                <FilmDetailsGenre name={ genre.name } id={ genre.id } />
+                <FilmDetailsGenre name={genre.name} id={genre.id} />
               )
             })}
           </div>
         </div>
-        <div className={ styles.info }>
-          <div className={ styles.description }>{ item.overview }</div>
+        <div className={styles.info}>
+          <div className={styles.description}>{ item.overview }</div>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-FilmDetails.propTypes = propTypes;
+FilmDetails.propTypes = propTypes
 
-export default FilmDetails;
+export default FilmDetails

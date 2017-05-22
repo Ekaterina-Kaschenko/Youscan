@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
+import React, { PropTypes } from 'react'
+import { Link } from 'react-router'
 
-import styles from './styles.css';
+import styles from './styles.css'
 
 const propTypes = {
   item: PropTypes.shape({
@@ -14,15 +14,15 @@ const propTypes = {
 const Item = ({ item: { id, backdrop_path, title } }) => {
   return (
     <Link
-      to={ `/details/${id}` } 
-      className= { styles['list-item'] }
-      key={ id }>
-      <img src={ backdrop_path } alt='film' />
-      <h3 className={ styles.title }>{ title }</h3>
+      to={`/details/${id}`}
+      className={styles['list-item']}
+      key={id}>
+      <img src={backdrop_path} alt='film' />
+      <h3 className={styles.title}>{title}</h3>
     </Link>
   )
-};
+}
 
-Item.propTypes = propTypes;
+Item.propTypes = propTypes
 
-export default Item;
+export default Item

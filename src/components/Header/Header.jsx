@@ -1,19 +1,19 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react'
 
-import styles from './styles.css';
+import styles from './styles.css'
 
 
 const propTypes = {
   children: PropTypes.element,
   search: PropTypes.element
-};
+}
 
 const Header = ({ children, search }) => {
   return (
-     <header className={ styles.header }>
-      <div className={ styles.container }>
-        <div className={ styles.toolbar }>
-          { children }
+    <header className={styles.header}>
+      <div className={styles.container}>
+        <div className={styles.toolbar}>
+          {children}
         </div>
         {search}
       </div>
@@ -21,6 +21,6 @@ const Header = ({ children, search }) => {
   )
 }
 
-Header.PropTypes = propTypes;
+Header.PropTypes = propTypes
 
-export default Header;
+export default Header

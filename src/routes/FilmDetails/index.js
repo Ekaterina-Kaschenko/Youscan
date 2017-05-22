@@ -1,8 +1,8 @@
-import FilmDetails from '../../components/FilmDetails';
+import FilmDetails from '../../components/FilmDetails'
 
 export default () => ({
   path: 'details/:id',
-  getChildRoutes(location, cb) {
+  getChildRoutes (location, cb) {
     cb(null, FilmDetails)
   }
 })

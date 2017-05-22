@@ -1,7 +1,6 @@
-import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
+import React, { PropTypes } from 'react'
 
-import styles from './styles.css';
+import styles from './styles.css'
 
 const propTypes = {
   children: PropTypes.element
@@ -9,12 +8,12 @@ const propTypes = {
 
 const Grid = ({children}) => {
   return (
-    <div className={ styles.content }>
+    <div className={styles.content}>
       {children}
     </div>
   )
-};
+}
 
-Grid.propTypes = propTypes;
+Grid.propTypes = propTypes
 
-export default Grid;
+export default Grid
