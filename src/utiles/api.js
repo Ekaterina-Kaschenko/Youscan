@@ -43,6 +43,7 @@ const api = {
   },
 
   getDetails (id) {
+    debugger
     const url = `https://api.themoviedb.org/3/movie/${id}?api_key=3f04510390c8d68dba128013d0013351&language=en-US`
     return fetch (url)
       .then(r => {

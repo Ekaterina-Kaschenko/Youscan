@@ -58,7 +58,7 @@ if (!isProd) {
 }
 
 module.exports = {
-  devtool: isProd ? 'source-map' : 'eval',
+  devtool: 'inline-source-map',
   context: sourcePath,
   entry: {
     js: './index.js',

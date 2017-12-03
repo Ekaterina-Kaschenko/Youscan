@@ -32,6 +32,7 @@ export default class CoreLayouts extends Component {
     })
 
     this.getDetails(this.props.params.id).then((res) => {
+      debugger
       this.setState({
         item: res
       })

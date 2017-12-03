@@ -26,7 +26,7 @@ export default class Container extends Component {
         genres: res
       })
     })
-
+    debugger
     this.getDetails(this.props.params.id).then((res) => {
       this.setState({
         item: res
