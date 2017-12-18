@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import Item from '../Item'
 import api from '../../utiles/api.js'
@@ -10,7 +11,7 @@ const propTypes = {
   loading: PropTypes.bool.isRequired
 }
 
-export default class Items extends Component {
+class Items extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -31,6 +32,8 @@ export default class Items extends Component {
 
   render () {
     const { loading, data } = this.state
+    const { test } = this.props
+    console.log('test', test)
     if (loading) {
       return (
         <div>Фильмы не найдены</div>
@@ -44,3 +47,9 @@ export default class Items extends Component {
     )
   }
 }
+
+export default connect(
+  state => ({
+    test: state.reducer.test
+  })
+)(Items)

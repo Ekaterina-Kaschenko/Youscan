@@ -27,26 +27,26 @@ export default class TextField extends Component {
     this.setState({ textFieldOpened: !this.state.textFieldOpened });
     console.log('click')
   }
- 
+
 
   render(){
     const props = this.props;
     let items = this.props.items;
       if ( props.filter ) {
-        items = items.filter( item => 
+        items = items.filter( item =>
           item.title.toLowerCase()
           .includes(props.filter.toLowerCase())
         )
       }
 
-    const TextFieldClassnames = 
+    const TextFieldClassnames =
       this.state.textFieldOpened ?
         [styles.textfield, styles['textfield__showen']].join(' ') :
         styles.textfield;
-      
+
       // this.state.textFieldOpened ?
-      //   classnames({styles.textfield}, styles['textfield__showen'] : 
-      //   styles.textfield ) 
+      //   classnames({styles.textfield}, styles['textfield__showen'] :
+      //   styles.textfield )
 
     return (
       <div className={ styles.search }>
@@ -57,13 +57,13 @@ export default class TextField extends Component {
             placeholder='Search'
             value={ props.value }
             onChange={ props.onChange } />
-          <Button 
+          <Button
           onClick={ this.handleClick }
           className={ styles['search-button'] }
           />
         </form>
         <ul className={ styles['search-results'] }>
-          {props.films.map(item => 
+          {props.films.map(item =>
             <li key={ item.id } className={ styles['search-results__item'] } >
               <Link to={ `/details/${item.id}` }>{ item.title } </Link>
             </li>

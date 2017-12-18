@@ -2,11 +2,17 @@ import {
   createStore,
   applyMiddleware
 } from 'redux'
-import thunk from 'redux-thunk'
+import createSagaMiddleware from 'redux-saga'
 
+import { loadFilms } from '../sagas/loadFilmDetails'
 import rootReducer from '../reducers'
 
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
-const store = createStoreWithMiddleware(rootReducer)
+const sagaMiddleware = createSagaMiddleware()
+const store = createStore(
+  rootReducer,
+  applyMiddleware(sagaMiddleware)
+)
+
+sagaMiddleware.run(loadFilms)
 
 export default store

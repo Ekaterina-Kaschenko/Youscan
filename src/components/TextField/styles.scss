@@ -22,12 +22,13 @@
       }
 
       a {
+        display: block;
         text-decoration: none;
         color: #01b3bf;
       }
     }
   }
-  
+
   &-button {
     background: url('/search.svg') no-repeat;
     background-size: 77%;

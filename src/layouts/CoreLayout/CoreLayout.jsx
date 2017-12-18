@@ -1,10 +1,13 @@
 import React, {Component} from 'react'
+import { connect } from 'react-redux'
 import ReactDOM from 'react-dom'
+
 import Header from '../../components/Header'
 import Logo from '../../components/Header/Logo'
 import TextField from '../../components/TextField'
 import Select from '../../components/Select'
 import api from '../../utiles/api.js'
+
 import '../../reset.css'
 import styles from './styles.scss'
 
@@ -20,7 +23,6 @@ export default class CoreLayouts extends Component {
       selectedValue: 'Choose genre'
     }
     this.getGenres = api.getGenres.bind(this)
-    this.getDetails = api.getDetails.bind(this)
   }
 
 
@@ -28,13 +30,6 @@ export default class CoreLayouts extends Component {
     this.getGenres().then((res) => {
       this.setState({
         genres: res
-      })
-    })
-
-    this.getDetails(this.props.params.id).then((res) => {
-      debugger
-      this.setState({
-        item: res
       })
     })
   }
@@ -80,6 +75,7 @@ export default class CoreLayouts extends Component {
 
   render () {
     const {value, genres} = this.state
+    debugger
     return (
       <div className={styles.app}>
         <Header search={<TextField
@@ -98,3 +94,4 @@ export default class CoreLayouts extends Component {
     )
   }
 }
+

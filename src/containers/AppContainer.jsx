@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { Router, browserHistory } from 'react-router'
+import { Provider } from 'react-redux'
+import store from '../store'
 
 export default class AppContainer extends Component {
   render () {
     return (
-      <div style={{ height: '100%' }}>
+      <Provider store={store}>
         <Router history={browserHistory} children={this.props.routes} />
-      </div>
+      </Provider>
     )
   }
 }

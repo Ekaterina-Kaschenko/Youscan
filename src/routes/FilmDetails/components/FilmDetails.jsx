@@ -24,7 +24,11 @@ class FilmDetails extends React.Component {
   }
 
   componentDidMount() {
-    const url = `https://api.themoviedb.org/3/movie/${this.props.params.id}?api_key=3f04510390c8d68dba128013d0013351&language=en-US`
+    this.loadFilm(this.props.params.id)
+  }
+
+  loadFilm(id) {
+    const url = `https://api.themoviedb.org/3/movie/${id}?api_key=3f04510390c8d68dba128013d0013351&language=en-US`
     return fetch (url)
       .then(r => {
         return r.json()
@@ -38,6 +42,13 @@ class FilmDetails extends React.Component {
         console.log(film)
         this.setState(() => ({  data: film  }))
       })
+  }
+
+
+  componentWillUpdate(nextProps, nextState) {
+    if (this.props.params.id !== nextProps.params.id) {
+      this.loadFilm(nextProps.params.id)
+    }
   }
 
   render() {
@@ -57,7 +68,7 @@ class FilmDetails extends React.Component {
               <div className={styles.rating}>
                 {data.genres.map(genre => {
                   return (
-                    <FilmDetailsGenre name={genre.name} id={genre.id} />
+                    <FilmDetailsGenre name={genre.name} id={genre.id} key={genre.id} />
                   )
                 })}
               </div>
@@ -70,7 +81,7 @@ class FilmDetails extends React.Component {
       }</div>
     )
   }
-  
+
 }
 
 // FilmDetails.propTypes = propTypes
@@ -80,4 +91,3 @@ export default FilmDetails
 
 
 
-   

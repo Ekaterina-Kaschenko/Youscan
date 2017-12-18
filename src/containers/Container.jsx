@@ -16,7 +16,7 @@ export default class Container extends Component {
       selectedValue: 'Choose genre'
     }
     this.getGenres = api.getGenres.bind(this)
-    this.getDetails = api.getDetails.bind(this)
+   // this.getDetails = api.getDetails.bind(this)
   }
 
 
@@ -26,12 +26,12 @@ export default class Container extends Component {
         genres: res
       })
     })
-    debugger
-    this.getDetails(this.props.params.id).then((res) => {
-      this.setState({
-        item: res
-      })
-    })
+    // debugger
+    // this.getDetails(this.props.params.id).then((res) => {
+    //   this.setState({
+    //     item: res
+    //   })
+    // })
   }
 
   textFieldChange (event) {

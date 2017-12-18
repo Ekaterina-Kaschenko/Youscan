@@ -1,11 +1,25 @@
-// Here is your default reducers content
+// // Here is your default reducers content
 
-import * as ActionTypes from '../constants/types
+import * as types from '../constants/types'
 
-export function app (state, action) {
+const initialState = {
+  test: 'my test'
+}
+
+export default function reducer (state = initialState, action) {
   switch (action.type) {
-    case ActionTypes.LOAD_FILM_DETAILS: {
-      
+    case types.LOAD_FILM_DETAILS: {
+      return Object.assign({}, state, {
+        filmDetails: action.payload.filmDetails
+      })
     }
+
+    case types.LOAD_FILMS_SUCCESS:
+      return Object.assign({}, state, {
+
+      })
+
+    default:
+      return initialState
   }
 }

@@ -62,7 +62,7 @@ module.exports = {
   context: sourcePath,
   entry: {
     js: './index.js',
-    vendor: ['react']
+    vendor: ['react', 'babel-polyfill']
   },
   output: {
     path: distPath,

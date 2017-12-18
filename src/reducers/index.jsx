@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
-// import customReducer from './custom-reducer';
+import reducer from './defaults';
 
 export default combineReducers({
-  // customReducer
+  reducer
 })
