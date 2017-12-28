@@ -1,13 +1,3 @@
-// function * loadFilmDetails (identifier, resource, synced) {
-//   if (action.payload.loadFilmDetails) {
-//     yield put({
-//       type: ActionTypes.LOAD_FILM_DETAILS,
-//       payload: {
-
-//       }
-//     })
-//   }
-// }
 import es6promise from 'es6-promise'
 import { all, put, takeEvery } from 'redux-saga/effects'
 import * as actions from '../actions/films'

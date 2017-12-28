@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
-import reducer from './defaults';
+import films from './films';
 
 export default combineReducers({
-  reducer
+  films
 })
