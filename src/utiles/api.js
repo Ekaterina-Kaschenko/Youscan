@@ -36,14 +36,22 @@ const api = {
       })
   },
 
-  getGenresFilm (id) {
+  getGenreFilms (id) {
     const url = `https://api.themoviedb.org/3/genre/${id}/movies?api_key=3f04510390c8d68dba128013d0013351&language=en-US&include_adult=false&sort_by=created_at.asc`
     return fetch (url)
       .then(res => res.json())
+      .then(x => { return x.results })
+      .then(x => {
+        return x.map(film => {
+          // "w92", "w154", "w185", "w342", "w500", "w780", or "original"
+          film.backdrop_path = 'http://image.tmdb.org/t/p/w342' + film.backdrop_path
+          film.poster_path = 'http://image.tmdb.org/t/p/w342' + film.poster_path
+          return film
+        })
+      })
   },
 
   getDetails (id) {
-    debugger
     const url = `https://api.themoviedb.org/3/movie/${id}?api_key=3f04510390c8d68dba128013d0013351&language=en-US`
     return fetch (url)
       .then(r => {

@@ -47,7 +47,6 @@ export default class TextField extends Component {
       // this.state.textFieldOpened ?
       //   classnames({styles.textfield}, styles['textfield__showen'] :
       //   styles.textfield )
-
     return (
       <div className={ styles.search }>
         <form className={ styles.form } onSubmit={ props.onSubmit }>

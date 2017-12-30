@@ -13,7 +13,6 @@ const propTypes = {
 }
 
 const Item = ({ item: { id, backdrop_path, title } }) => {
-  debugger
   return (
     <Link
       to={`/details/${id}`}

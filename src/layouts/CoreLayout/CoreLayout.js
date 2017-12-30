@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import ReactDOM from 'react-dom'
+
+import * as filmsActions from '../../actions/films'
 
 import Header from '../../components/Header'
 import Logo from '../../components/Header/Logo'
@@ -11,7 +14,7 @@ import api from '../../utiles/api.js'
 import '../../reset.css'
 import styles from './styles.scss'
 
-export default class CoreLayouts extends Component {
+class CoreLayouts extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -22,51 +25,25 @@ export default class CoreLayouts extends Component {
       choosenGenre: null,
       selectedValue: 'Choose genre'
     }
-    this.getGenres = api.getGenres.bind(this)
+
+    this.onGenreChange = this.onGenreChange.bind(this)
   }
 
 
   componentWillMount () {
-    this.getGenres().then((res) => {
-      this.setState({
-        genres: res
-      })
-    })
+
+    this.props.loadGenres()
   }
 
   textFieldChange (event) {
     const value = event.target.value
-    if (!value) {
-      this.setState({
-        data: [],
-        value
-      })
-      return
-    }
-    api.searchFilms(event.target.value).then((res) => {
-      const titles = []
-      const appliedFilms = []
-      const data = res.forEach(item => {
-        if (titles.includes(item.title)) { return }
-        titles.push(item.title)
-        appliedFilms.push(item)
-      })
-
-      this.setState({
-        data: appliedFilms,
-        value
-      })
-    })
+    this.props.searchFilms(value)
   }
 
-  selectChange (event) {
-    this.setState({ selectedValue: event.target.value })
-    let genreID = this.state.genres.filter(g => g.name === event.target.value)[0].id
-    api.getGenresFilm(genreID).then((res) => {
-      this.setState({
-        choosenGenre: res.results
-      })
-    })
+  onGenreChange (event) {
+
+    let genreId = event.target.value
+    this.props.loadGenreFilms(genreId) // from actions
   }
 
   handleSubmit (event) {
@@ -74,20 +51,19 @@ export default class CoreLayouts extends Component {
   }
 
   render () {
-    const {value, genres} = this.state
-    debugger
+    const { value } = this.state
+    const { genres } = this.props
     return (
       <div className={styles.app}>
         <Header search={<TextField
-          films={this.state.data}
+          films={this.props.searchResults}
           onChange={(e) => this.textFieldChange(e)}
           onSubmit={(e) => this.handleSubmit(e)} />}>
           <Logo src={'/logo.png'} />
           <Select
-            value={this.state.value}
             items={genres}
             label='Выбрать жанр'
-            onChange={(e) => this.selectChange(e)} />
+            onChange={this.onGenreChange} />
         </Header>
         {this.props.children}
       </div>
@@ -95,3 +71,11 @@ export default class CoreLayouts extends Component {
   }
 }
 
+export default connect(
+  state => ({
+    films: state.films.films,
+    genres: state.films.genres,
+    searchResults: state.films.searchResults
+  }),
+  dispatch => bindActionCreators(filmsActions, dispatch)
+)(CoreLayouts)

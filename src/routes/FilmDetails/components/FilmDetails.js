@@ -1,5 +1,10 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import PropTypes from 'prop-types'
+
+import * as filmsActions from '../../../actions/films'
+
 import styles from './styles.scss'
 
 import FilmDetailsGenre from './FilmDetailsGenres'
@@ -15,58 +20,35 @@ import FilmDetailsGenre from './FilmDetailsGenres'
 
 
 class FilmDetails extends React.Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
-      data: undefined
-    }
-  }
-
   componentDidMount() {
-    this.loadFilm(this.props.params.id)
-  }
-
-  loadFilm(id) {
-    const url = `https://api.themoviedb.org/3/movie/${id}?api_key=3f04510390c8d68dba128013d0013351&language=en-US`
-    return fetch (url)
-      .then(r => {
-        return r.json()
-      })
-      .then(film => {
-        film.backdrop_path = 'http://image.tmdb.org/t/p/w342' + film.backdrop_path
-        film.poster_path = 'http://image.tmdb.org/t/p/w342' + film.poster_path
-        return film
-      })
-      .then(film => {
-        console.log(film)
-        this.setState(() => ({  data: film  }))
-      })
+    this.props.loadFilmDetails(this.props.params.id)
   }
 
 
   componentWillUpdate(nextProps, nextState) {
+    // for searching: if we change route id - changes all content
     if (this.props.params.id !== nextProps.params.id) {
-      this.loadFilm(nextProps.params.id)
+      this.props.loadFilmDetails(nextProps.params.id)
     }
   }
 
   render() {
-    const { data } = this.state;
-    console.log(data)
-    return (
-      <div>{ data &&
+    const { film } = this.props;
+    console.log('film', film)
 
-        <div key={data.id}
+
+    return (
+      <div>{ film &&
+        <div key={film.id}
           className={styles['item-card']} >
-          <h3 className={styles.title}>{ data.title }</h3>
+          <h3 className={styles.title}>{ film.title }</h3>
           <div className={styles.content}>
             <div className={styles.profile}>
               <div className={styles['profile__img']}>
-                <img src={data.backdrop_path} alt='film' />
+                <img src={film.backdrop_path} alt='film' />
               </div>
               <div className={styles.rating}>
-                {data.genres.map(genre => {
+                {film.genres.map(genre => {
                   return (
                     <FilmDetailsGenre name={genre.name} id={genre.id} key={genre.id} />
                   )
@@ -74,7 +56,7 @@ class FilmDetails extends React.Component {
               </div>
             </div>
             <div className={styles.info}>
-              <div className={styles.description}>{ data.overview }</div>
+              <div className={styles.description}>{ film.overview }</div>
             </div>
           </div>
         </div>
@@ -86,7 +68,14 @@ class FilmDetails extends React.Component {
 
 // FilmDetails.propTypes = propTypes
 
-export default FilmDetails
+
+export default connect(
+  state => ({
+    film: state.films.film
+  }),
+  dispatch => bindActionCreators(filmsActions, dispatch)
+)(FilmDetails)
+
 
 
 
