@@ -1,5 +1,3 @@
-// // Here is your default reducers content
-
 import * as types from '../constants/types'
 
 const initialState = {

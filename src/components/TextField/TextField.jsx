@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import {Link} from 'react-router'
+import { Link } from 'react-router'
 import classnames from 'classnames'
 
 import Button from '../../components/Button'
@@ -25,11 +25,10 @@ export default class TextField extends Component {
 
   handleClick = () => {
     this.setState({ textFieldOpened: !this.state.textFieldOpened });
-    console.log('click')
   }
 
 
-  render(){
+  render() {
     const props = this.props;
     let items = this.props.items;
       if ( props.filter ) {
@@ -44,9 +43,6 @@ export default class TextField extends Component {
         [styles.textfield, styles['textfield__showen']].join(' ') :
         styles.textfield;
 
-      // this.state.textFieldOpened ?
-      //   classnames({styles.textfield}, styles['textfield__showen'] :
-      //   styles.textfield )
     return (
       <div className={ styles.search }>
         <form className={ styles.form } onSubmit={ props.onSubmit }>

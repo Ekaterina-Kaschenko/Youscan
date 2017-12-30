@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import PropTypes from 'prop-types'
@@ -19,7 +19,7 @@ import FilmDetailsGenre from './FilmDetailsGenres'
 // }
 
 
-class FilmDetails extends React.Component {
+class FilmDetails extends Component {
   componentDidMount() {
     this.props.loadFilmDetails(this.props.params.id)
   }

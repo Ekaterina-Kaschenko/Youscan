@@ -19,7 +19,7 @@ class Items extends Component {
 
     return (
       <div className={styles.list}>
-        { films.map(item => <Item key={item.id} item={item} />)}
+        { films.map(item => <Item key={ item.id } item={ item } />) }
       </div>
     )
   }
