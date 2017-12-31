@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server",
     "prod": "webpack-dev-server -p",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -20,18 +21,21 @@
   "homepage": "https://github.com/Ekaterina-Kaschenko/Youscan#readme",
   "devDependencies": {
     "babel-core": "^6.21.0",
+    "babel-jest": "^22.0.4",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-class-properties": "^6.19.0",
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-polyfill": "^6.26.0",
-    "babel-preset-es2015": "^6.18.0",
-    "babel-preset-react": "^6.16.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-react-hmre": "^1.1.1",
     "babel-runtime": "^6.20.0",
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
+    "jest": "^22.0.4",
     "ngrok": "^2.2.5",
+    "react-test-renderer": "^16.2.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "v2.2.0-rc.3",
