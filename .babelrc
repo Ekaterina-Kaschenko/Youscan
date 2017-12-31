@@ -3,13 +3,22 @@
     "transform-class-properties"
   ],
   "presets": [
-    ["es2015", { "modules": false }],
-    "react"
+    "es2015", "react"
   ],
   "env": {
     "development": {
       "presets": [
         "react-hmre"
+      ]
+    },
+    "test": {
+      "plugins": [
+        [
+          "css-modules-transform", {
+            "extensions": [".scss"],
+            "preprocessCss": "./pre-processor.js"
+          }
+        ]
       ]
     }
   }
