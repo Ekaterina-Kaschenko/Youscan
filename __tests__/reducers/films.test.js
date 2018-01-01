@@ -15,6 +15,11 @@ describe('Application reducer', () => {
 
     const mutated = filmsReducers(initialState, action)
 
+    expect(mutated)
+      .to.have.property('isFrontVisible')
+      .that.is.a('boolean')
+      .and.equal(true)
+
    console.log(mutated)
   })
 })
