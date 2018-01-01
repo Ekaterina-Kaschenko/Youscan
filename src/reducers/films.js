@@ -1,6 +1,6 @@
 import * as types from '../constants/types'
 
-const initialState = {
+export const initialState = {
   films: [],
   film: null,
   genres: [],
@@ -8,7 +8,7 @@ const initialState = {
   error: null
 }
 
-export default function reducer (state = initialState, action) {
+export default function filmsReducers (state = initialState, action) {
   switch (action.type) {
     case types.LOAD_FILMS_SUCCESS:
     case types.LOAD_GENRE_FILMS_SUCCESS:
