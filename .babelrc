@@ -18,7 +18,8 @@
             "extensions": [".scss"],
             "preprocessCss": "./pre-processor.js"
           }
-        ]
+        ],
+        "transform-async-to-generator"
       ]
     }
   }
