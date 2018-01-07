@@ -11,7 +11,7 @@ describe('films saga', () => {
 
     console.log(gen)
     expect(await gen.next().value).toEqual(fakeResponse)
-    expect(gen.next().value).toEqual(put(filmsActions.loadFilms()))
+    expect(gen.next().value).toEqual(put(filmsActions.loadFilmsSuccess()))
     expect(gen.next().done).toBe(true)
   })
 

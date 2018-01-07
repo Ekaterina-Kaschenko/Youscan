@@ -43,6 +43,8 @@ export default class TextField extends Component {
         [styles.textfield, styles['textfield__showen']].join(' ') :
         styles.textfield;
 
+    const { films = [] } = props // refactoring
+
     return (
       <div className={ styles.search }>
         <form className={ styles.form } onSubmit={ props.onSubmit }>
@@ -58,7 +60,7 @@ export default class TextField extends Component {
           />
         </form>
         <ul className={ styles['search-results'] }>
-          {props.films.map(item =>
+          {films.map(item => // refactoring props.films
             <li key={ item.id } className={ styles['search-results__item'] } >
               <Link to={ `/details/${item.id}` }>{ item.title } </Link>
             </li>

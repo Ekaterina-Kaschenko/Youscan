@@ -3,35 +3,59 @@ import filmsReducers, { initialState } from '../../src/reducers/films'
 
 describe('Application reducer', () => {
   it('should load films on LOAD_FILMS_SUCCESS action', () => {
-    const films = [{
+    const film = {
       name: 'Home Along',
-      genres: 'Family'
-    }]
+      genres: 'Family',
+      backdrop_path: 'backdrop_path',
+      poster_path: 'poster_path'
+    }
+
+    const films = {
+      results: [ film ]
+    }
 
     const action = {
       type: ActionTypes.LOAD_FILMS_SUCCESS,
-      payload: { films }
+      payload: {
+        films
+      }
     }
 
     const mutated = filmsReducers(initialState, action)
 
-    expect(mutated).toHaveProperty('films', films)
+    expect(mutated).toHaveProperty('films', [film])
+
   })
 
   it('should load genres on LOAD_GENRE_FILMS_SUCCESS action', () => {
-    const films = [{
+    const film = {
       name: 'Home Along',
-      genres: 'Family'
+      genres: 'Family',
+      backdrop_path: 'backdrop_path',
+      poster_path: 'poster_path'
+    }
+
+    const expectedResult = [{
+      name: 'Home Along',
+      genres: 'Family',
+      backdrop_path: 'http://image.tmdb.org/t/p/w342backdrop_path',
+      poster_path: 'http://image.tmdb.org/t/p/w342poster_path'
     }]
+
+    const films = {
+      results: [ film ]
+    }
 
     const action = {
       type: ActionTypes.LOAD_GENRE_FILMS_SUCCESS,
-      payload: { films }
+      payload: {
+        films
+      }
     }
 
     const mutated = filmsReducers(initialState, action)
 
-    expect(mutated).toHaveProperty('films', films)
+    expect(mutated).toHaveProperty('films', expectedResult)
   })
 
   it('should load genres on LOAD_FILM_DETAILS action', () => {
@@ -62,7 +86,10 @@ describe('Application reducer', () => {
   })
 
   it('should load genres on LOAD_GENRES_SUCCESS action', () => {
-     const genres = ['Drama', 'Comedy', 'History']
+     const genres = {
+      genres: ['Drama', 'Comedy', 'History']
+    }
+     
      const action = {
       type: ActionTypes.LOAD_GENRES_SUCCESS,
       payload: { genres }
@@ -70,21 +97,29 @@ describe('Application reducer', () => {
 
     const mutated = filmsReducers(initialState, action)
 
-    expect(mutated).toHaveProperty('genres', genres)
+    expect(mutated).toHaveProperty('genres', genres.genres)
   })
 
    it('should load genres on SEARCH_FILMS_SUCCESS action', () => {
-    const films = [{
+      const film = {
       name: 'Home Along',
-      genres: 'Family'
-    }]
+      genres: 'Family',
+      backdrop_path: 'backdrop_path',
+      poster_path: 'poster_path'
+    }
+
+    const films = {
+      results: [ film ]
+    }
+
      const action = {
       type: ActionTypes.SEARCH_FILMS_SUCCESS,
       payload: { films }
     }
 
     const mutated = filmsReducers(initialState, action)
-    expect(mutated).toHaveProperty('searchResults', films)
+    
+    expect(mutated).toHaveProperty('searchResults', [ film ])
   })
 
   it('should load genres on ERROR action', () => {
