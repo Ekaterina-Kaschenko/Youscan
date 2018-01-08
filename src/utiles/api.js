@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV === 'test') {
-  var fetch = () => Promise.resolve({
+  global.fetch = () => Promise.resolve({
     json: () => ({ success: true, fake: true })
   })
 }

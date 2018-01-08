@@ -10,8 +10,10 @@ es6promise.polyfill()
 export function * loadFilms() {
   try {
     const films = yield api.getPopularFilms()
+    console.log(films)
     yield put(actions.loadFilmsSuccess(films))
   } catch (error) {
+    console.log(error)
     yield put(actions.failure(error))
   }
 }
