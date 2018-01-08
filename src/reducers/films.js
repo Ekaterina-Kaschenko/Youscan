@@ -12,7 +12,6 @@ export default function filmsReducers (state = initialState, action) {
   switch (action.type) {
     case types.LOAD_FILMS_SUCCESS:
     case types.LOAD_GENRE_FILMS_SUCCESS: {
-      debugger
       const films = action.payload.films.results.map(film => {
           // "w92", "w154", "w185", "w342", "w500", "w780", or "original"
           film.backdrop_path = 'http://image.tmdb.org/t/p/w342' + film.backdrop_path
