@@ -12,15 +12,8 @@ export default function filmsReducers (state = initialState, action) {
   switch (action.type) {
     case types.LOAD_FILMS_SUCCESS:
     case types.LOAD_GENRE_FILMS_SUCCESS: {
-      const films = action.payload.films.results.map(film => {
-          // "w92", "w154", "w185", "w342", "w500", "w780", or "original"
-          film.backdrop_path = 'http://image.tmdb.org/t/p/w342' + film.backdrop_path
-          film.poster_path = 'http://image.tmdb.org/t/p/w342' + film.poster_path
-          return film
-        })
-      
       return Object.assign({}, state, {
-        films
+        films: action.payload.films
       })
     }
     case types.LOAD_FILM_DETAILS:
@@ -29,28 +22,23 @@ export default function filmsReducers (state = initialState, action) {
       })
       
     case types.LOAD_FILM_DETAILS_SUCCESS: {
-      const film = action.payload.film
-
-      film.backdrop_path = 'http://image.tmdb.org/t/p/w342' + film.backdrop_path
-      film.poster_path = 'http://image.tmdb.org/t/p/w342' + film.poster_path
-
       return Object.assign({}, state, {
-        film
+        film: action.payload.film
       })
     }
     case types.LOAD_GENRES_SUCCESS:
       return Object.assign({}, state, {
-        genres: action.payload.genres.genres
+        genres: action.payload.genres
       })
 
     case types.SEARCH_FILMS_SUCCESS:
       return Object.assign({}, state, {
-        searchResults: action.payload.films.results
+        searchResults: action.payload.films
       })
 
     case types.ERROR:
       return Object.assign({}, state, {
-        error: action.payload.error.toString()
+        error: action.payload.error // .toString()
       })
 
     default:
