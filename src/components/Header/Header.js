@@ -1,6 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import Logo from './Logo'
+import TextField from '../TextField'
+import Select from '../Select'
+
 import styles from './styles.scss'
 
 
@@ -9,14 +13,23 @@ const propTypes = {
   search: PropTypes.element
 }
 
-const Header = ({ children, search }) => {
+const Header = (props) => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.toolbar}>
-          {children}
+          <Logo src={'/logo.png'} />
+          <Select
+            items={props.genres}
+            label='Выбрать жанр'
+            onChange={props.onGenreChange} />
         </div>
-        {search}
+        <TextField
+          films={props.searchResults}
+          onChange={props.textFieldChange}
+          onSubmit={props.handleSubmit}
+          onKeyDown={props.onKeyDownHandler} 
+          />
       </div>
     </header>
   )

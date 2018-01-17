@@ -16,19 +16,22 @@ const propTypes = {
 }
 
 export default class TextField extends Component {
-  constructor() {
+  constructor () {
     super();
     this.state = {
       textFieldOpened: false
     }
+    this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick = () => {
+  handleClick (e) {
+    e.preventDefault()
     this.setState({ textFieldOpened: !this.state.textFieldOpened });
   }
 
 
-  render() {
+
+  render () {
     const props = this.props;
     let items = this.props.items;
       if ( props.filter ) {
@@ -51,14 +54,16 @@ export default class TextField extends Component {
             className={ TextFieldClassnames }
             placeholder='Search'
             value={ props.value }
-            onChange={ props.onChange } />
+            onChange={ props.onChange }
+            onKeyDown= {props.onKeyDown} 
+            />
           <Button
-          onClick={ this.handleClick }
-          className={ styles['search-button'] }
-          />
+            onClick={ this.handleClick }
+            className={ styles['search-button'] }
+            />
         </form>
         <ul className={ styles['search-results'] }>
-          {props.films.map(item => // refactoring props.films
+          {props.films.map(item =>
             <li key={ item.id } className={ styles['search-results__item'] } >
               <Link to={ `/details/${item.id}` }>{ item.title } </Link>
             </li>

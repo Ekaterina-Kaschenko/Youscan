@@ -1,4 +1,4 @@
-import HomePage from './components/HomePage'
+import Items from '../../../src/components/Items'
 export default {
-  component: HomePage
+  component: Items
 }
