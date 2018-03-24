@@ -6,9 +6,9 @@ const propTypes = {
   src: PropTypes.string.isRequired
 }
 
-const Logo = ({ src }) => {
+const Logo = ({ src, onLogoClick }) => {
   return (
-    <a className={styles.logo}>
+    <a className={styles.logo} onClick={ onLogoClick }>
       <img src={src} alt='logo' />
     </a>
   )

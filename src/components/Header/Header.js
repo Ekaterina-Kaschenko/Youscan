@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Logo from './Logo'
-import TextField from '../TextField'
+import Form from '../Form'
 import Select from '../Select'
 
 import styles from './styles.scss'
@@ -18,23 +18,27 @@ const Header = (props) => {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.toolbar}>
-          <Logo src={'/logo.png'} />
+          <Logo
+            src={'/logo.png'}
+            onLogoClick={props.onLogoClick} />
           <Select
             items={props.genres}
             label='Выбрать жанр'
-            onChange={props.onGenreChange} />
+            onChange={props.onGenreChange}
+            isSelectShow={props.isSelectShow} />
         </div>
-        <TextField
+        <Form
           films={props.searchResults}
           onChange={props.textFieldChange}
           onSubmit={props.handleSubmit}
           onKeyDown={props.onKeyDownHandler} 
+          isFormShow={props.isFormShow}
           />
       </div>
     </header>
   )
 }
 
-Header.PropTypes = propTypes
+Header.propTypes = propTypes
 
 export default Header

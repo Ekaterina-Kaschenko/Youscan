@@ -19,13 +19,16 @@ class CoreLayout extends Component {
       value: '',
       data: [],
       choosenGenre: null,
-      selectedValue: 'Choose genre'
+      selectedValue: 'Choose genre',
+      isFormShow: true,
+      isSelectShow: true
     }
 
     this.onGenreChange = this.onGenreChange.bind(this)
     this.textFieldChange = this.textFieldChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.onKeyDownHandler = this.onKeyDownHandler.bind(this)
+    this.onLogoClick = this.onLogoClick.bind(this)
   }
 
 
@@ -56,6 +59,15 @@ class CoreLayout extends Component {
     e.preventDefault()
   }
 
+  onLogoClick (e) {
+    e.preventDefault()
+    window.location.pathname = '/'
+    this.setState({
+      isFormShow: true,
+      isSelectShow: true
+    })
+  }
+
   render () {
     const { value } = this.state
     
@@ -68,6 +80,9 @@ class CoreLayout extends Component {
           textFieldChange={this.textFieldChange}
           handleSubmit={this.handleSubmit}
           onKeyDownHandler={this.onKeyDownHandler}
+          onLogoClick={this.onLogoClick}
+          isFormShow={this.state.isFormShow}
+          isSelectShow={this.state.isSelectShow}
         />
         {this.props.children}
       </div>

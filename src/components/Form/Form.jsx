@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router'
 import classnames from 'classnames'
 
+import TextField from '../../components/TextField'
 import Button from '../../components/Button'
 import styles from './styles.scss'
 
@@ -15,7 +16,7 @@ const propTypes = {
   textFieldOpened: PropTypes.bool.isRequired
 }
 
-export default class TextField extends Component {
+export default class Form extends Component {
   constructor () {
     super();
     this.state = {
@@ -41,7 +42,7 @@ export default class TextField extends Component {
         )
       }
 
-    const TextFieldClassnames =
+    const textFieldClassnames =
       this.state.textFieldOpened ?
         [styles.textfield, styles['textfield__showen']].join(' ') :
         styles.textfield;
@@ -49,14 +50,11 @@ export default class TextField extends Component {
     return (
       <div className={ styles.search }>
         <form className={ styles.form } onSubmit={ props.onSubmit }>
-          <input
-            type="text"
-            className={ TextFieldClassnames }
-            placeholder='Search'
+          <TextField
+            className={ textFieldClassnames }
             value={ props.value }
             onChange={ props.onChange }
-            onKeyDown= {props.onKeyDown} 
-            />
+            onKeyDown= {props.onKeyDown}  />
           <Button
             onClick={ this.handleClick }
             className={ styles['search-button'] }
@@ -74,4 +72,4 @@ export default class TextField extends Component {
   }
 }
 
-TextField.PropTypes = propTypes;
+Form.PropTypes = propTypes;
